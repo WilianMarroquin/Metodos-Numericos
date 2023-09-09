@@ -1,0 +1,882 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+   background: #edf9ff ; 
+}
+header{
+    background: #2980b9;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #2231d6, #3b76dc, #ffffff89);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #10649f6b, #2475a75b, #ffffff89), url(https://previews.123rf.com/images/peshkova/peshkova1605/peshkova160500607/56778842-escritorio-de-oficina-con-el-ordenador-port%C3%A1til-blanco-en-blanco-calculadora-caf%C3%A9-informe-de.jpg);
+ width: 100%;
+ height: 600px;
+ background-size: cover;
+ background-attachment: fixed;
+ position: relative;
+}
+ .wave{
+        position: absolute;
+        bottom: 0; 
+        width: 100%;
+ }
+ header .textos-header{
+    display: flex;
+    align-items: center;
+    min-height: 430px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+ }
+ .textos-header{
+    color: white; 
+ }
+ .textos-header h1{
+    font-size: 50px;
+ }
+.textos-header h2{
+    font-size: 30px;
+}
+header nav{
+  display: flex;
+  justify-content: right; 
+  padding: 30px 50px 0 0;
+}
+.descuido{
+    margin-right: 66%;
+}
+.descuido:hover{
+    fill:rgb(255, 254, 252); 
+}
+nav a{
+    color: white; 
+    text-decoration: none;
+    margin-right: 15px;
+    font-weight: 300;
+}
+.boton{
+    width: 140px;
+    height: 40px;
+    background-image: linear-gradient(to right, #7dc4d69a 0%, #137ea9 100%);
+    color: rgb(253, 253, 253); 
+    border-radius: 10px;
+    line-height: 1.6em;
+    font-size: 24px;
+    margin-top: 10px;
+    border: none;
+}
+.boton:hover{
+    cursor: pointer;
+    background:#ffffff; 
+    color: rgb(0, 23, 176); 
+}
+
+/* aca estan los estilos de las tablas */
+.resultados{
+    width: 720px;
+    height: 500px;
+   box-shadow: 0 0 6px 0 rgb(22, 165, 221);
+   background-color: #fff;
+   border-bottom-left-radius: 10px;
+   border-bottom-right-radius: 10px;
+   margin: auto;
+   margin-top: 30px;
+}
+.encabezado{
+    display: flex;
+    background-image: linear-gradient(120deg, #b9ebf1 0%, #3199e4 100%);
+}
+.de-encabezados{
+    width: 20%;
+    border: 1px solid rgb(67, 47, 25);
+    height: 30px;
+    font-size: 18px;
+    line-height: 1.5em;
+    text-align: center;
+}
+.de-calculados{
+    display: flex;
+}
+.ille{
+width: 20%;
+}
+.edit{
+    width: 100%;
+    border: 1px solid rgb(21, 94, 107);
+    color: rgb(20, 115, 150); 
+    height:25px;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+.edit p{
+    overflow: hidden;
+}
+.miller{
+    display: none;
+}
+.textos{
+    text-align: center;
+}
+.textos-regla{
+    text-align: center;
+}
+.borde{
+    text-align: center;
+}
+
+.img-btn-regla{
+    text-align: center;
+}
+.img-btn-newton{
+    text-align: center;
+}
+.imagen-btn{
+    text-align: center;
+}
+.logo{
+    margin-top: 3px;
+    display: none;
+    margin-left: 2%; 
+     background-color: white;
+    height: 60px;
+    width: 60px;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 0 6px 0 rgb(0, 23, 176);
+    cursor: pointer;
+}
+.logo img{
+    width: 60px;
+}
+.tabla-new{
+    height: 360px;
+    width: 530px;
+}
+main{
+    display: flex;
+    flex-wrap: wrap;
+}
+.grafica{
+    width: 750px;
+    display: none;
+    margin: auto;
+    margin-top: 30px;
+    box-shadow: 0 0 6px 0 rgb(151, 213, 244);
+}
+.cont-general-Interpolarisacion{
+    width: 100%;
+}
+.cont-grupal-int{
+    display: flex;
+    justify-content: center;
+}
+.cont-Interpolacion-Newton{
+    width: 700px; 
+    height: 440px;;
+    border-radius: 20px;
+    margin-top: 3px; 
+    margin: auto;
+}
+.cont-tabla-datos{
+    margin: 30px;
+    display: flex; 
+}
+.cont-casillas{
+    display: block;
+   
+    width: 65px;
+    border-radius: 3px;
+
+}
+.cont-calcular-intervalos{
+    box-shadow: 0 0 6px 0 aqua;
+    margin: auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+}
+.cont-calcular-intervalos h1{
+    margin-top: 50px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:rgb(0, 176, 164)
+}
+.prueba{
+    margin-top: 20%;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(45deg, rgb(56, 166, 193), rgb(96, 143, 163), rgb(151, 213, 244), rgb(255, 255, 255));
+   align-content: center;
+   background-size: 400% 400%;
+   position: relative;
+   box-shadow: 0 0 6px 0 rgb(0 0 0 /30%);
+   animation: cambiar 3s ease infinite;
+   margin-left: 20px;
+   display: block;
+   text-align: center;
+   margin: auto;
+   margin-left: 20px;
+}
+.dentro{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.dentro1{
+    display: block;
+    font-size: 23px;
+    color: rgb(255, 255, 255); 
+}
+.casilla{
+    width: 60px; 
+    height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, rgb(0, 191, 229), rgb(84, 137, 229), rgb(5, 184, 234), rgb(255, 255, 255));
+  background-size: 400% 400%;
+  position: relative;
+  animation: cambiar 3s ease infinite;
+  color: white; 
+  margin-top: 10px;
+  margin-left: 3px;
+ font-size: 24px;
+ text-align: center;
+ line-height: 40px;
+} 
+@keyframes cambiar{
+    0%{background-position: 0 50%;}
+    50%{background-position: 100% 50%;}
+    100%{background-position: 0 50%;}
+}
+.elResu{
+    font-size: 50px;
+    color:rgb(7, 7, 181); 
+    font-weight: 900;
+}
+.resul{
+    background: linear-gradient(45deg, rgb(42, 176, 202), rgb(148, 183, 243), rgb(44, 206, 255), rgb(255, 255, 255));
+    background-size: 400% 400%;
+    position: relative;
+    animation: cambiar 3s ease infinite;
+    height: 80px;
+    margin-top: 180px;
+    margin-left: 200px;
+    border-radius: 10px;
+}
+
+
+/* ACA EMPIEZA LOS ESTILOS DEL METODO BISECCION */
+.cont-individual{
+    width: 280px;
+    height: 280px;
+    margin-left: 20px;
+    overflow: hidden;
+   border-radius: 20px;
+   box-shadow: 0 0 6px 0 rgb(0 0 .6);
+}
+.cont-individual .cont-mostrar1{
+    width: 100%;
+    height: 100%;
+        transition: all ease-in-out 0.3s;
+}
+.cont-mostrar1 img{
+    width: 100%;
+    height: 100%; border-radius: 20px;
+}
+.cont-mostrar2{
+    position: absolute;
+    background-color: rgba(25, 132, 182, 0.916);
+    width: 280px;
+    margin-top: 150px;
+    height: 130px;
+    transition: all ease-in-out 0.3s;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: white; 
+}
+.imagen{
+    margin-top: -40px;
+    width: 70px;
+    height: 70px;
+    background-color: rgba(25, 132, 182, 0.916);
+    border-radius: 50%;
+    margin-left: 35%;
+    transition: all ease-in-out 0.7s;
+}
+.imagen-btn{
+    transform: scale(0);
+    transition: transform .3s; 
+}
+.imagen-btn img{
+    width: 90%;
+    margin-top: 10px;
+}
+.ocultor-exisde{
+position: absolute;
+width: 100%;
+background-color: #ffffff; 
+}
+.btn-biseccion{
+    width: 90%;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 20px;
+    font-size: 20px;
+    border: 0;
+    font-weight: 900;
+    cursor: pointer;
+    transition: all .3s;
+   
+}
+.btn-biseccion:hover{
+    background-color: #00ddff;
+    color: white; 
+    box-shadow: 0 0 6px 0 rgb(0, 157, 255);
+}
+.btn-newton{
+    cursor: pointer; 
+    border-radius: 40px; 
+    width: 90%; 
+    height: 40px; 
+    border: 0; 
+    font-size: 20px; 
+    font-weight: 900;
+    transition: all .3s;
+}
+.btn-newton:hover{
+    box-shadow: 0 0 6px 0 rgb(0, 157, 255);
+    background-color: #00ddff;
+    color: white; 
+}
+.btn-regla-falsa:hover{
+    box-shadow: 0 0 6px 0 rgb(0, 157, 255);
+    background-color: #00ddff;
+    color: white; 
+}
+
+.cont-individual:hover .cont-mostrar2{
+    height: 280px;
+    margin-top: 0;
+    border-top-right-radius: 20px;
+    border-top-left-radius:20px ;
+}
+.cont-individual:hover .cont-mostrar2 .imagen-btn{
+    transform: scale(1);
+
+}
+.cont-individual:hover .cont-mostrar2 .imagen{
+    margin-top: 15px;
+    box-shadow: 0 0 6px 0 rgb(0 0 0 /30%);
+}
+.cont-individual:hover > .cont-mostrar1{
+    width: 107%;
+    height: 107%;
+    margin-left: -3%;
+    margin-top: -3%;
+    border-radius: 40px;
+}
+/* AKA EMPIEZAN LOS ESTILOS DEL METODO DE REGLA FALSA */
+.cont-individual-regla{
+    width: 550px;
+    height: 280px;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-left: 20px;
+    box-shadow: 0 0 6px 0 rgb(0 0 .6);
+}
+.cont-individual-regla .cont-mostrar1-regla{
+    width: 100%;
+    height: 100%;
+    transition: all ease-in-out 0.3s;
+}
+.cont-individual-regla img{
+    width: 100%;
+    height: 100%;
+    transition: all ease-in-out 0.3s;
+}
+.cont-individual-regla .cont-mostrar2-regla{
+    width: 240px;
+    height: 280px;
+    margin-left: 310px;
+    background-color: rgba(25, 132, 182, 0.916);
+    position: absolute;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: all ease-in-out 0.3s;
+}
+
+.imagen-regla{
+    width: 70px; 
+    height: 70px;
+    border-radius: 50%;
+    background-color: rgba(25, 132, 182, 0.916);
+    margin-left: -35px;
+    margin-top: 120px;
+    transition: all ease-in-out 0.7s;
+}
+.img-btn-regla{
+    width: 70%;
+    margin-left: 100px;
+    margin-top: 40px;
+    transform: scale(0);
+    transition: transform .3s;
+}
+.img-btn-regla button{
+    margin-top: 30px;
+    width: 80%;
+    height: 40px;
+    border-radius: 30px;
+    border: 0;
+    font-weight: 900;
+    font-size: 20px;
+    transition: all .3s;
+}
+.cont-individual-regla .cont-mostrar2-regla .textos-regla{
+    color: white; 
+    margin-top: -40px;
+    transition: all ease-in-out 0.3s;
+}
+.cont-individual-regla:hover .img-btn-regla{
+    transform: scale(1);
+}
+.cont-individual-regla:hover .cont-mostrar2-regla{
+    width: 550px;
+    margin-left: 0;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+}
+.cont-individual-regla:hover .cont-mostrar2-regla .textos-regla{
+    margin-top: -180px;
+}
+.cont-individual-regla:hover .cont-mostrar2-regla .imagen-regla{
+    margin-left: 10px;
+}
+.cont-individual-regla:hover .cont-mostrar1-regla img{
+    width: 107%;
+    height: 107%;
+    margin-top: -3%;
+    margin-left: -3%;
+}
+/* ACA ESTAN LOS ESTILOS DEL METODO DE NEWTON */
+.cont-individual-newton{
+    width: 280px;
+    height: 580px;
+    margin-left: 20px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 0 6px 0 rgb(white, white, white);
+}
+.cont-mostrar1-newton{
+    width: 100%;
+height: 100%;
+}
+.cont-individual-newton img{
+    width: 100%;
+    height: 100%;
+}
+.cont-individual-newton .cont-mostrar2-newton{
+    width: 280px;
+    height: 250px;
+    background-color: rgba(25, 132, 182, 0.916);
+    position: absolute;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-top: 330px;
+    color: white;
+    transition: all ease-in-out 0.3s;
+}
+.cont-mostrar2-newton .margen{
+    transform: scale(0);
+    transition: transform .3s;
+}
+.cont-individual-newton:hover .cont-mostrar2-newton{
+    height: 580px;
+   margin-top: 0;
+   border-top-right-radius: 20px;
+   border-top-left-radius: 20px; 
+}
+.cont-individual-newton:hover .cont-mostrar2-newton .imagen{
+    margin-top: 10px;
+}
+.cont-individual-newton:hover .cont-mostrar2-newton .margen{
+    margin-bottom: 60px;
+    font-size: 40px;
+    transform: scale(1);
+}
+.cont-individual-newton:hover .cont-mostrar2-newton .borde{
+    margin-bottom: 60px;
+    font-size: 40px;
+    transform: scale(1);
+}
+.mill{
+position: absolute;
+margin-top: 600px;
+}
+.grafica{
+    width: 700px; 
+    height: 400px;
+     background-color: rgb(255, 255, 255); 
+     border-radius: 20px; 
+     margin: auto; 
+     margin-top: 20px;
+     margin-bottom: 3px;
+}
+.inter{
+    margin-top: -280px;
+    margin-left: 320px;
+}
+.top{
+   margin-top: -280px;
+}
+.top6{
+    margin-top: 20px;
+}
+.top3{
+  margin-left: 620px;
+  margin-top: 20px;
+}
+.top4{
+    margin-left: 320px;
+    margin-top: -280px;
+}
+.contenedor-general{
+    width: 360px;
+    background-color: white;
+    padding: 2.5em 3em;
+    border-radius: 10px;
+    text-align: center;
+   box-shadow: 0 0 6px 0 rgb(78, 186, 225);
+   margin-bottom: 10px;
+   margin-top: 5px;
+    margin: auto;
+   }
+   .contenedor-con{
+       margin-top: 3em;
+       display: grid;
+       gap: 2.5em; 
+   }
+   .contenedor-grupal{
+       position: relative;
+       --color: #5757577e; 
+   }
+   .form_imput{
+       width: 100%;
+       background: none;
+       color: #706c6c; 
+       font-size: 1rem;
+       padding: .6em .3em;
+       border: none;
+       outline: none;
+       border-bottom: 1px solid #5757577e;
+   }
+   .form_imput:focus, 
+   .form_imput:not(:placeholder-shown){
+       color: #4d4646; 
+   }
+   .form_imput:focus + .form_label, 
+   .form_imput:not(:placeholder-shown)+ .form_label {
+       transform: translateY(-12px) scale(.7);
+       transform-origin: left top;
+       color: rgb(96, 75, 61);
+   }
+   .form_label{
+       color: var(--color); 
+       cursor: pointer;
+       top: 0; 
+       position: absolute;
+       color: var(--color); 
+       cursor: pointer;
+       top:0; 
+       position: absolute;
+       top:0; 
+       left: 5px;
+       transform: translateY(10px);
+       transition: transform .5s, color .3s;
+   }
+   .form_submit{
+       background-color: #4bc1e2;
+       color: rgb(255, 255, 255); 
+       font-weight: 900;
+       font-size: 1rem;
+       padding: .8em 0;
+       border: none; 
+       border-radius: .5em;
+       cursor: pointer;
+    transition: all.4s;
+   }
+   .form_submit:hover{
+       background: #feffff;
+       color: rgb(0, 57, 104);  
+           box-shadow: 0 0 6px 0 rgb(9, 124, 159);
+           font-size: 15px;
+   }
+   .form_line{
+       position: absolute;
+       bottom: 0;
+       left: 0;
+       width: 100%;
+       height: 2px;
+       background-color: #33c6ef; 
+       transform: scale(0);
+       transform: left bottom;
+       transition: transform .4s;
+   }
+   .form_imput:focus ~ .form_line,
+   .form_imput:not(:placeholder-shown) ~ .form_line{
+       transform: scale(1);
+   }
+   .boton-modificar{
+    background: none;
+    border: 0;
+    cursor: pointer; 
+    }
+    .boton-modificar:hover{
+        color: #46c0f4; 
+    }
+    .calcular_intervalos{
+        display: block; 
+        justify-content: center;
+        margin-top: -20px;
+        display: none;
+    }
+    .seccion1{
+        display: flex;
+        justify-content: center;
+    }  .boton-aumentos{
+        width: 20px;
+        background-image: linear-gradient(120deg, #c5f3ff 0%, #4dd2ed 100%);
+        border-radius: 3px;
+        border: 0;
+        font-size: 15px;
+    }
+    .calcular_intervalos .form_imput{
+        width: 30px; 
+       text-align: center;
+    }
+  
+    .verification{
+        margin-top: 10px;
+        font-size: 15px;
+        background-color: white;
+        border: 0;
+        border: 2px solid rgb(54, 154, 181);
+        border-radius: 4px;
+        width: 70px;
+        height: 30px;
+        margin-bottom: -100px;
+        width: 100%;
+        color:rgb(10, 109, 134); 
+        cursor: pointer;
+    }
+    .verification:hover{
+        background-color: #30cde6;
+        color: white; 
+    }
+    .selecciones{
+       background: none;
+       border: none;
+        border-bottom: 1px solid var(--color);
+        text-align: center;
+        font-weight: 800;
+        color:rgb(67, 47, 25)
+    }
+    option{
+        border: none;
+        margin-bottom: 1px solid var(--color);
+    }
+    .unica{
+        color: var(--color); 
+    }
+    .imput-veri{
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+    }
+    .imput-veri input{
+        width: 100px;
+        height: 30px;
+        border: 0;
+        box-shadow: 0 0 6px 0 rgb(34, 189, 216);
+        border-radius: 7px;
+        outline: none;
+        text-align: center;
+    }
+    .cont-opciones-moviles{
+        display: block;
+        margin: auto;
+        transform: scale(0);
+        position: absolute;
+    }
+    .M{
+        margin-bottom: 20px;
+    }
+    footer{
+        width: 100%;
+        height: 140px;
+        background-color: #8a8a8a;
+        margin-top: 30px;
+        margin-top: 70px;
+    }
+    .cont-footer{
+        justify-content: space-evenly;
+        display: flex;
+        padding: 25px 20px;
+        border-bottom: 1px solid rgb(255, 255, 255);
+    }
+    .grupos-footer{
+       text-align: center;
+    }
+    .grupos-footer h1{
+        font-size: 20px;
+        color: rgb(243, 243, 243); 
+        border-bottom: 1px solid white;
+    }
+    .grupos-footer h2{
+        font-size: 15px;
+        color: rgb(255, 255, 255); 
+    }
+    .botones{
+        width: 100%;
+        margin-top: 20px;
+    }
+    .grupos-botones {
+text-align: center;
+    }
+    .grupos-botones button{
+        background-color: #ffffff;
+        border-radius: 10px;
+        width: 15%;
+        margin-left: 3%;
+        font-size: 15px;
+        cursor: pointer;
+    
+        align-items: center;
+        text-align: center;
+        border: none;
+        box-shadow: 0 0 6px 0 rgb(148, 183, 243);
+    }
+    canvas{
+        display: none;
+    }
+    .grupos-botones button:hover{
+        box-shadow: 0 0 10px 0 rgb(0, 157, 255);
+    }
+    .grupos-botones button img{
+        width: 45px;
+    }
+    .ultimo{
+        font-size: 22px;
+        color: gray; 
+        text-align: center;
+    }
+    @media screen and (max-width:600px){
+        .wave{
+            position: absolute;
+            bottom: 0; 
+            width: 100%;
+     }
+       .cont-grupos{
+       transform: scale(0);
+       position: absolute;
+       }
+       .cont-opciones-moviles{
+        transform: scale(1);
+        position: static;
+       }
+       footer{
+        width: 100%;
+       }
+       .grupos-footer{
+        width: 50px; 
+        overflow: hidden;
+       }
+       .grupos-footer h1{
+        font-size: 10px;
+       }
+       .grupos-footer h2{
+        font-size: 10px;
+       }
+       .ultimo{
+        font-size: 15px;
+       }
+       .contenedor-general{
+        width: 90%;
+        margin-top: 20px;
+       }
+       .resultados{
+        width: 90%;
+       }
+      .ille{
+        width: 20%;
+        font-size: 10px;
+      }
+      .edit{
+        width: 100%;
+        border: 1px solid rgb(21, 94, 107);
+        color: rgb(20, 115, 150); 
+        height:25px;
+        flex-wrap: wrap;
+        overflow: hidden;
+    }
+      .calcular_intervalos .form_imput{
+        width: 10px; 
+       text-align: center;
+    }
+    .calcular_intervalos{
+      margin-left: -6px;
+    }
+  
+    .verification{
+        margin-top: 10px;
+        font-size: 15px;
+        background-color: white;
+        border: 0;
+        border: 2px solid rgb(54, 154, 181);
+        border-radius: 4px;
+        height: 30px;
+        margin-bottom: -100px;
+        width: 50%;
+        color:rgb(10, 109, 134); 
+        cursor: pointer;
+    }
+    .cont-calcular-intervalos{
+       padding: 20px;
+       background-color: transparent;
+       border: none;
+       box-shadow: none;
+    }
+    .grafica{
+        width: 90%;
+        height: 200px;
+        margin-top: 30px;
+    }
+    .resul{
+        margin-left: 50px;
+    }
+    .de-encabezados{
+        font-size: 13px;
+    }
+    header nav{
+        display: flex;
+        justify-content: right; 
+        padding: 10px;
+        font-weight: 900;
+      }
+   
+
+    }
+    @media screen and (min-width:600px){
+        .cont-grupos{
+            transform: scale(1);
+            position: static;
+        }
+        .cont-opciones-moviles{
+            transform: scale(0);
+            position: absolute;
+        }
+    }
+  

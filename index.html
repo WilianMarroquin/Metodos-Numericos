@@ -1,0 +1,2571 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodos Numericos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="imagenes/icons8-distributed-counter-48.png">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+     <script src="codigo.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <nav id="amonos">
+            <a href="#">Inicio</a>
+            <a href="#">Acerca de</a>
+            <a href="#">Tutorial</a>
+            <a href="#">Preguntas Frecuentes</a>
+        </nav>
+        <section id="amonos2" class="textos-header">
+            <h1>METODOS NUMERICOS</h1>
+            <h2>Resolucion 100% segura</h2>
+            <a href="#movil">
+                <button class="boton">Empezar</button>
+            </a>
+        </section>
+        <div class="wave" style="height: 150px; overflow: hidden;">
+            <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                <path d="M-10.53,13.32 C150.00,150.00 349.21,-49.99 500.00,49.99 L500.00,150.00 L0.00,150.00 Z"
+                    style="stroke: none; fill: #edf9ff">
+                </path>
+            </svg>
+        </div>
+    </header>
+    <!-- Aca esta el logo -->
+    <button onclick="cargar_pagina()" class="logo" id="logo"><img src="imagenes/logo_volver-removebg-preview.png"
+            alt=""></button>
+    <main>
+        <!-- Aca estan las opciones -->
+        <div style="display: flex; flex-wrap: wrap; margin-left: 40px;" id="opciones" class="cont-grupos">
+            <!-- METODO DE BISECCION -->
+            <div class="cont-individual">
+                <div class="cont-mostrar2">
+                    <div class="imagen">
+                        <img src="imagenes/icons8-alarma-64.png" alt="">
+                    </div>
+                    <div class="textos">
+                        <H1>Biseccion</H1>
+                    </div>
+                    <div class="imagen-btn">
+                        <img src="imagenes/biseccion-1.png" alt="">
+                        <button onclick="entrada_Biseccion()" class="btn-biseccion">Resolver</button>
+                    </div>
+                </div>
+                <div class="cont-mostrar1">
+                    <img src="imagenes/two.png" alt="">
+                </div>
+            </div>
+            <!-- METODO DE REGLA FALSA -->
+            <div class="cont-individual-regla regla_falsa">
+                <div class="cont-mostrar2-regla">
+                    <div class="imagen-regla">
+                        <img src="imagenes/icons8-alarma-64.png" alt="">
+                    </div>
+                    <div class="textos-regla">
+                        <H1>Regla Falsa</H1>
+                    </div>
+                    <div class="img-btn-regla">
+                        <img src="imagenes/regla_falsa_veridico-removebg-preview.png" alt="">
+                        <button style="cursor: pointer;" onclick="entrada_regla_falsa()"
+                            class="btn-regla-falsa">Resolver</button>
+                    </div>
+
+                </div>
+                <div class="cont-mostrar1-regla">
+                    <img src="imagenes/one.jpg" alt="">
+                </div>
+            </div>
+            <!-- METODO DE NEWTON -->
+            <div class="cont-individual-newton newton">
+                <div class="cont-mostrar2-newton">
+                    <div class="imagen borde">
+                        <img src="imagenes/icons8-alarma-64.png" alt="">
+                    </div>
+                    <h1 style="transition: all ease-in-out 0.3s;" class="borde">Newton</h1>
+                    <div class="img-btn-newton margen">
+                        <img class="margen" src="imagenes/Newton-removebg-preview.png" alt="">
+                        <button onclick=" Entrada_Newton()"
+                            class="btn_resolver btn-newton">Resolver</button>
+                    </div>
+                </div>
+                <div class="cont-mostrar1-newton">
+                    <img src="imagenes/treeeee.jpg" alt="">
+                </div>
+            </div>
+            <!-- METODO DE LA SECANTE -->
+            <div id="partes" class="cont-individual-regla marge secante top">
+                <div class="cont-mostrar2-regla">
+                    <div class="imagen-regla">
+                        <img src="imagenes/icons8-alarma-64.png" alt="">
+                    </div>
+                    <div class="textos-regla">
+                        <H1>La Secante</H1>
+                    </div>
+                    <div class="img-btn-regla">
+                        <img src="imagenes/secante-removebg-preview.png" alt="">
+                        <button style="cursor: pointer;" onclick=" Entrada_Secante()"
+                            class="btn-regla-falsa">Resolver</button>
+                    </div>
+                </div>
+                <div class="cont-mostrar1-regla">
+                    <img src="https://images.pexels.com/photos/4959752/pexels-photo-4959752.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                        alt="">
+                </div>
+            </div>
+            <!-- METODO NEWTON MEJORADO -->
+            <div id="partes" class="cont-individual marge top mejorado">
+                <div class="cont-mostrar2">
+                    <div class="imagen">
+                        <img src="imagenes/icons8-alarma-64.png" alt="">
+                    </div>
+                    <div class="textos">
+                        <H1>Newton Mejorado</H1>
+                    </div>
+                    <div class="imagen-btn">
+                        <img src="imagenes/newtonMejorado-removebg-preview.png" alt="">
+                        <button onclick="Entrada_newmejorado()" class="btn-biseccion">Resolver</button>
+                    </div>
+
+                </div>
+                <div class="cont-mostrar1">
+                    <img src="https://cdn.euroinnova.edu.es/img/subidasEditor/96-1619999702.webp" alt="">
+                </div>
+            </div>
+            <!-- METODO DE MILLER -->
+            <div class="cont-individual-newton mill">
+                <div class="cont-mostrar2-newton">
+                    <div class="imagen borde">
+                        <img src="imagenes/icons8-alarma-64.png" alt="">
+                    </div>
+                    <h1 style="transition: all ease-in-out 0.3s;" class="borde">MULLER</h1>
+                    <div class="img-btn-newton margen">
+                        <img class="margen" src="imagenes/metodo_miller-removebg-preview.png" alt="">
+                        <button onclick="Entrada_Miller()"
+                            style="cursor: pointer; border-radius: 40px; width: 90%; height: 40px; border: 0; font-size: 20px; font-weight: 900;" class="btn-newton">Resolver</button>
+                    </div>
+                </div>
+                <div class="cont-mostrar1-newton">
+                    <img src="imagenes/MILLER.jpg" alt="">
+                </div>
+            </div>
+            <!-- PROXIMO -->
+            <div class="cont-individual prox1 top6">
+                <div class="cont-mostrar2">
+                    <div class="imagen">
+                        <img src="imagenes/icons8-alarma-64.png" alt="">
+                    </div>
+                    <div class="textos">
+                        <H1>Proximamente</H1>
+                    </div>
+                    <div class="imagen-btn">
+                        <img src="" alt="">
+                        <button onclick="entrada_Biseccion()" class="btn-biseccion">Resolver</button>
+                    </div>
+                </div>
+                <div class="cont-mostrar1">
+                    <img src="imagenes/proximamente4.jpg" alt="">
+                </div>
+            </div>
+            <!-- INTERPOLACION -->
+            <div class="cont-individual-regla top2 inter" style="font-size: 13px;">
+                <div class="cont-mostrar2-regla">
+                    <div class="imagen-regla">
+                        <img src="imagenes/icons8-alarma-64.png" alt="">
+                    </div>
+                    <div class="textos-regla">
+                        <H1>INTERPOLACION</H1>
+                    </div>
+                    <div class="img-btn-regla">
+                        <img src="imagenes/INTERPOLACION-removebg-preview.png" alt="">
+                        <button style="cursor: pointer;" onclick="Entrada_Interpolacion()"
+                            class="btn-regla-falsa">Resolver</button>
+                    </div>
+
+                </div>
+                <div class="cont-mostrar1-regla">
+                    <img src="imagenes/interpolacion.jpg" alt="">
+                </div>
+            </div>
+            <!-- METODO DE NOSE -->
+            <div class="cont-individual-regla marge top3 ">
+                <div class="cont-mostrar2-regla">
+                    <div class="imagen-regla">
+                        <img src="imagenes/icons8-alarma-64.png" alt="">
+                    </div>
+                    <div class="textos-regla">
+                        <H1>Bairstow</H1>
+                    </div>
+                    <div class="img-btn-regla or">
+                        <img src="imagenes/Imagen_de_WhatsApp_2023-05-17_a_las_18.09.30-removebg-preview.png" alt="">
+                        <button style="cursor: pointer;" onclick="" class="btn-regla-falsa">Resolver</button>
+                    </div>
+
+                </div>
+                <div class="cont-mostrar1-regla ">
+                    <img src="imagenes/proximamente3.jpg" alt="">
+                </div>
+            </div>
+            <!-- PROXIMAMENTE -->
+            <div class="cont-individual marge top4">
+                <div class="cont-mostrar2">
+                    <div class="imagen">
+                        <img src="imagenes/icons8-alarma-64.png" alt="">
+                    </div>
+                    <div class="textos">
+                        <H1>Proximamente</H1>
+                    </div>
+                    <div class="imagen-btn">
+                        <img src="" alt="">
+                        <button onclick="" class="btn-biseccion">Resolver</button>
+                    </div>
+                </div>
+                <div class="cont-mostrar1">
+                    <img src="imagenes/PROXIMAMENTE1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- Aca estan las opciones en modo movil -->
+        <div class="cont-opciones-moviles" id="movil">
+            <!-- Metodo de biseccion -->
+            <div class="cont-individual M">
+                <div class="cont-mostrar2">
+                    <div class="imagen">
+                        <img src="imagenes/icons8-alarma-64.png" alt="">
+                    </div>
+                    <div class="textos">
+                        <H1>Biseccion</H1>
+                    </div>
+                    <div class="imagen-btn">
+                        <img src="imagenes/biseccion-1.png" alt="">
+                        <button onclick="entrada_Biseccion()" class="btn-biseccion">Resolver</button>
+                    </div>
+                </div>
+                <div class="cont-mostrar1">
+                    <img src="imagenes/two.png" alt="">
+                </div>
+            </div>
+            <!-- Metodo de regla falsa -->
+            <div class="cont-individual M">
+                <div class="cont-mostrar2">
+                    <div class="imagen">
+                        <img src="imagenes/icons8-alarma-64.png" alt="">
+                    </div>
+                    <div class="textos">
+                        <H1>Regla Falsa</H1>
+                    </div>
+                    <div class="imagen-btn">
+                        <img src="imagenes/regla_falsa_veridico-removebg-preview.png" alt="">
+                        <button onclick="entrada_regla_falsa()" class="btn-biseccion">Resolver</button>
+                    </div>
+                </div>
+                <div class="cont-mostrar1">
+                    <img src="imagenes/two.png" alt="">
+                </div>
+            </div>
+            <!-- Metodo de newton -->
+            <div class="cont-individual M">
+                <div class="cont-mostrar2">
+                    <div class="imagen">
+                        <img src="imagenes/icons8-alarma-64.png" alt="">
+                    </div>
+                    <div class="textos">
+                        <H1>Newton</H1>
+                    </div>
+                    <div class="imagen-btn">
+                        <img src="imagenes/Newton-removebg-preview.png" alt="">
+                        <button onclick="Entrada_Newton()" class="btn-biseccion">Resolver</button>
+                    </div>
+                </div>
+                <div class="cont-mostrar1">
+                    <img src="imagenes/two.png" alt="">
+                </div>
+            </div>
+            <!-- Metodo de La secante -->
+            <div class="cont-individual M">
+                <div class="cont-mostrar2">
+                    <div class="imagen">
+                        <img src="imagenes/icons8-alarma-64.png" alt="">
+                    </div>
+                    <div class="textos">
+                        <H1>Secante</H1>
+                    </div>
+                    <div class="imagen-btn">
+                        <img src="imagenes/secante-removebg-preview.png" alt="">
+                        <button onclick="Entrada_Secante()" class="btn-biseccion">Resolver</button>
+                    </div>
+                </div>
+                <div class="cont-mostrar1">
+                    <img src="imagenes/two.png" alt="">
+                </div>
+            </div>
+            <!-- Metodo de Newton Mejorado -->
+            <div class="cont-individual M">
+                <div class="cont-mostrar2">
+                    <div class="imagen">
+                        <img src="imagenes/icons8-alarma-64.png" alt="">
+                    </div>
+                    <div class="textos">
+                        <H1>Newton Mejorado</H1>
+                    </div>
+                    <div class="imagen-btn">
+                        <img src="imagenes/newtonMejorado-removebg-preview.png" alt="">
+                        <button onclick="Entrada_newmejorado()" class="btn-biseccion">Resolver</button>
+                    </div>
+                </div>
+                <div class="cont-mostrar1">
+                    <img src="imagenes/two.png" alt="">
+                </div>
+            </div>
+            <!-- Metodo de Interpolacion Newton -->
+            <div class="cont-individual M">
+                <div class="cont-mostrar2">
+                    <div class="imagen">
+                        <img src="imagenes/icons8-alarma-64.png" alt="">
+                    </div>
+                    <div class="textos">
+                        <H1>Interpolacion Newton</H1>
+                    </div>
+                    <div class="imagen-btn">
+                        <img src="imagenes/inter-newton-removebg-preview.png" alt="">
+                        <button onclick="Entrada_Interpolacion_Newton()" class="btn-biseccion">Resolver</button>
+                    </div>
+                </div>
+                <div class="cont-mostrar1">
+                    <img src="imagenes/two.png" alt="">
+                </div>
+            </div>
+            <!-- Metodo de Interpolacion Lagranje -->
+            <div class="cont-individual M">
+                <div class="cont-mostrar2">
+                    <div class="imagen">
+                        <img src="imagenes/icons8-alarma-64.png" alt="">
+                    </div>
+                    <div class="textos">
+                        <H1>Interpolacion Lagranje</H1>
+                    </div>
+                    <div class="imagen-btn">
+                        <img src="imagenes/inter-laranje-removebg-preview.png" alt="">
+                        <button onclick="Entrada_Lagranje()" class="btn-biseccion">Resolver</button>
+                    </div>
+                </div>
+                <div class="cont-mostrar1">
+                    <img src="imagenes/two.png" alt="">
+                </div>
+            </div>
+            <!-- Metodo de Muller -->
+            <div class="cont-individual M">
+                <div class="cont-mostrar2">
+                    <div class="imagen">
+                        <img src="imagenes/icons8-alarma-64.png" alt="">
+                    </div>
+                    <div class="textos">
+                        <H1>Muller</H1>
+                    </div>
+                    <div class="imagen-btn">
+                        <img src="imagenes/inter-laranje-removebg-preview.png" alt="">
+                        <button onclick="Entrada_Miller()" class="btn-biseccion">Resolver</button>
+                    </div>
+                </div>
+                <div class="cont-mostrar1">
+                    <img src="imagenes/two.png" alt="">
+                </div>
+            </div>
+            <!-- Metodo de Bairstow -->
+            <div class="cont-individual M">
+                <div class="cont-mostrar2">
+                    <div class="imagen">
+                        <img src="imagenes/icons8-alarma-64.png" alt="">
+                    </div>
+                    <div class="textos">
+                        <H1>Bairstow</H1>
+                    </div>
+                    <div class="imagen-btn">
+                        <img src="imagenes/Imagen_de_WhatsApp_2023-05-17_a_las_18.09.30-removebg-preview.png" alt="">
+                        <button onclick="Entrada_Miller()" class="btn-biseccion">Resolver</button>
+                    </div>
+                </div>
+                <div class="cont-mostrar1">
+                    <img src="imagenes/two.png" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- Aca esta el formulario -->
+        <div class="contenedor-general roues" id="formulario" style="display: none;">
+            <button id="refresh" style="background-color: white; border: none; cursor: pointer"
+                onclick="cargar_paginas()"><img src="imagenes/hause_icon.png" alt=""></button>
+            <div class="contenedor-con">
+
+                <div class="contenedor-grupal">
+                    <input type="text" id="funcion" class="form_imput" placeholder=" ">
+                    <label id="valor_funci" for="funcion" class="form_label">Funcion F(x) Ej:(x^2+4)</label>
+                    <span class="form_line"></span>
+                </div>
+                <div class="contenedor-grupal" id="ocultar_form">
+                    <input type="text" id="intervalo" class="form_imput" placeholder=" ">
+                    <label id="label1" for="intervalo" class="form_label">Intervalos Ej:(1,2)</label>
+                    <span class="form_line"></span>
+                </div>
+                <div class="contenedor-grupal">
+                    <div style="width: 100%; margin: auto;" class="contenedor-grupal complit">
+                        <input type="text" id="Limite" class="form_imput" placeholder=" ">
+                        <label id="objetivo" for="Limite" class="form_label">Objetivo (T) Ej:(0.001)</label>
+                        <span class="form_line"></span>
+                    </div>
+                </div>
+                <div class="contenedor-grupal" id="newton">
+                    <button onclick="mostrar()" class="boton-modificar" id="newton">¿Desea calcular los
+                        intervalos?</button>
+                </div>
+                <div class="contenedor-grupal calcular_intervalos" id="elemento">
+                    <div class="imput-veri">
+                        <input id="negativo" type="text" placeholder="-1">
+                        <h3 style="font-size: 30px; color:rgb(89, 9, 135)">A</h3>
+                        <input type="text" placeholder="+1" id="positivo">
+                    </div>
+                    <button onclick=" calculo_intervalos()" class="verification">Verificar</button>
+                </div>
+                <button id="boton_1" onclick="resolver()" class="form_submit">Resolver</button>
+                <button id="boton_2" onclick="Resolver_newton()" class="form_submit">Resolver</button>
+                <button id="boton_3" onclick="resolver()" class="form_submit">Resolver</button>
+                <button id="boton_4" onclick="resolver_N_mejorado()" class="form_submit">Resolver</button>
+                <button id="boton_miller" onclick="Resolver_miller()" class="form_submit">Resolver</button>
+                <button id="boton_inter_newton" onclick="Resolver_inter_newton()" class="form_submit">Resolver
+                    </button>
+                <button id="boton_inter_nose" onclick="resolver_nose()" class="form_submit">Resolver
+                </button>
+            </div>
+        </div>
+        <!-- Aca esta la primera (principal tabla) -->
+        <div id="resultados" class="resultados" style="display: none;">
+            <div style="text-align: center;" class="encabezado">
+                <div class="de-encabezados">
+                    <p>I</p>
+                </div>
+                <div class="de-encabezados">
+                    <p id="e-1">a</p>
+                </div>
+                <div class="de-encabezados">
+                    <p id="e-2">b</p>
+                </div>
+                <div class="de-encabezados">
+                    <p id="e-3">F(a)</p>
+                </div>
+                <div class="de-encabezados">
+                    <p id="e-4">F(b)</p>
+                </div>
+                <div class="de-encabezados">
+                    <p id="e-5">XR</p>
+                </div>
+                <div id="encabezado1" class="de-encabezados">
+                    <p id="e-6">F(XR)</p>
+                </div>
+                <div id="encabezado2" class="de-encabezados">
+                    <p id="e-7">T</p>
+                </div>
+                <!-- SOLO SE UTILIZA EN METODO DE MILLER -->
+                <div style="justify-content: center;" class="de-encabezados miller" id="encabezadoMiller1">
+                    <p id="e-8"></p>
+                </div>
+                <div style="justify-content: center;" class="de-encabezados miller" id="encabezadoMiller2">
+                    <p id="e-9"></p>
+                </div>
+                <div style="justify-content: center;" class="de-encabezados miller" id="encabezadoMiller3">
+                    <p id="e-10"></p>
+                </div>
+                <div style="justify-content: center;" class="de-encabezados miller" id="encabezadoMiller4">
+                    <p id="e-11"></p>
+                </div>
+                <div style="justify-content: center;" class="de-encabezados miller" id="encabezadoMiller5">
+                    <p id="e-12"></p>
+                </div>
+                <div style="justify-content: center;" class="de-encabezados miller" id="encabezadoMiller6">
+                    <p id="e-13"></p>
+                </div>
+                <div style="justify-content: center;" class="de-encabezados miller" id="encabezadoMiller7">
+                    <p id="e-14"></p>
+                </div>
+                <div style="justify-content: center;" class="de-encabezados miller" id="encabezadoMiller8">
+                    <p id="e-15"></p>
+                </div>
+                <div style="justify-content: center;" class="de-encabezados miller" id="encabezadoMiller9">
+                    <p id="e-16"></p>
+                </div>
+                <div style="justify-content: center;" class="de-encabezados miller" id="encabezadoMiller10">
+                    <p id="e-17"></p>
+                </div>
+                <div style="justify-content: center;" class="de-encabezados miller" id="encabezadoMiller11">
+                    <p id="e-18"></p>
+                </div>
+            </div>
+            <div style="margin-bottom: 50px;" class="calculados">
+                <div class="de-calculados">
+                    <div class="I ille">
+                        <div id="Ident1_0" class="de-I edit">
+                            <p>1.</p>
+                        </div>
+                        <div id="Ident2_0" class="de-I edit">
+                            <p>2.</p>
+                        </div>
+                        <div id="Ident3_0" class="de-I edit">
+                            <p>3.</p>
+                        </div>
+                        <div id="Ident4_0" class="de-I edit">
+                            <p>4.</p>
+                        </div>
+                        <div id="Ident5_0" class="de-I edit">
+                            <p>5.</p>
+                        </div>
+                        <div id="Ident6_0" class="de-I edit">
+                            <p>6.</p>
+                        </div>
+                        <div id="Ident7_0" class="de-I edit">
+                            <p>7.</p>
+                        </div>
+                        <div id="Ident8_0" class="de-I edit">
+                            <p>8.</p>
+                        </div>
+                        <div id="Ident9_0" class="de-I edit">
+                            <p>9.</p>
+                        </div>
+                        <div id="Ident10_0" class="de-I edit">
+                            <p>10.</p>
+                        </div>
+                        <div id="Ident11_0" class="de-I edit">
+                            <p>11.</p>
+                        </div>
+                        <div id="Ident12_0" class="de-I edit">
+                            <p>12.</p>
+                        </div>
+                        <div id="Ident13_0" class="de-I edit">
+                            <p>13.</p>
+                        </div>
+                    </div>
+                    <!-- ACA ESTA EL DE LA A -->
+                    <div class="a ille">
+                        <div id="Ident1_1" class="de-a edit">
+                            <p id="Intervalo1_1"></p> <!--VALOR DE A INTERVALO1-->
+                        </div>
+                        <div id="Ident2_1" class="de-a edit">
+                            <p id="Intervalo2_1"></p> <!--VALOR DE A EN EL INTERVALO2-->
+                        </div>
+                        <div id="Ident3_1" class="de-a edit">
+                            <p ID="Intervalo3_1">
+                            <p> <!--VALOR DE A EN EL INTERVALO3-->
+                        </div>
+                        <div id="Ident4_1" class="de-a edit">
+                            <p id="Intervalo4_1"></p> <!--VALOR DE A EN EL INTERVALO4-->
+                        </div>
+                        <div id="Ident5_1" class="de-a edit">
+                            <p id="Intervalo5_1"></p> <!--VALOR DE A EN EL INTERAVLO5-->
+                        </div>
+                        <div id="Ident6_1" class="de-a edit">
+                            <p Id="Intervalo6_1"></p> <!--VALOR DE A EN EL INTERVALO6-->
+                        </div>
+                        <div id="Ident7_1" class="de-a edit">
+                            <p id="Intervalo7_1"></p> <!--VALOR DE A EN EL INTERVALO7-->
+                        </div>
+                        <div id="Ident8_1" class="de-a edit">
+                            <p id="Intervalo8_1"></p> <!--VALOR DE A EN EL INTERVALO8-->
+                        </div>
+                        <div id="Ident9_1" class="de-a edit">
+                            <p id="Intervalo9_1"></p> <!--VALOR DE A EN EL INTERVALO9-->
+                        </div>
+                        <div id="Ident10_1" class="de-a edit">
+                            <p id="Intervalo10_1"></p> <!--VALOR DE A EN EL INTERVALO10-->
+                        </div>
+                        <div id="Ident11_1" class="de-a edit">
+                            <p id="Intervalo11_1"></p> <!--VALOR DE A EN EL INTERVALO11-->
+                        </div>
+                        <div id="Ident12_1" class="de-a edit">
+                            <p id="Intervalo12_1"></p> <!--VALOR DE A EN EL INTERVALO12-->
+                        </div>
+                        <div id="Ident13_1" class="de-a edit">
+                            <p id="Intervalo13_1"></p> <!--VALOR DE A EN EL INTERVALO13-->
+                        </div>
+                    </div>
+                    <!-- ACA ESTA EL DE LA B -->
+                    <div class="b ille">
+                        <div id="Ident1_2" class="de-b edit">
+                            <p id="Intervalo1_2"></p> <!--Valor de B Intervalo1 -->
+                        </div>
+                        <div id="Ident2_2" class="de-b edit">
+                            <p ID="Intervalo2_2"></p> <!--VALOR DE B EN EL INTERVALO2-->
+                        </div>
+                        <div id="Ident3_2" class="de-b edit">
+                            <p id="Intervalo3_2"></p> <!--VALOR DE B EN EL INTERVALO3-->
+                        </div>
+                        <div id="Ident4_2" class="de-b edit">
+                            <p id="Intervalo4_2"></p> <!--VALOR DE B EN EL INTERVALO4-->
+                        </div>
+                        <div id="Ident5_2" class="de-b edit">
+                            <p id="Intervalo5_2"></p> <!--VALOR DE B EN EL INTERVALO5-->
+                        </div>
+                        <div id="Ident6_2" class="de-b edit">
+                            <p id="Intervalo6_2"></p> <!--VALOR DE B EN EL INTERVALO6-->
+                        </div>
+                        <div id="Ident7_2" class="de-b edit">
+                            <p id="Intervalo7_2"></p> <!--VALOR DE B EN EL INTERVALO7-->
+                        </div>
+                        <div id="Ident8_2" class="de-b edit">
+                            <p id="Intervalo8_2"></p> <!--VALOR DE B EN EL INTERVALO8-->
+                        </div>
+                        <div id="Ident9_2" class="de-b edit">
+                            <p id="Intervalo9_2"></p> <!--VALOR DE B EN EL INTERVALO9-->
+                        </div>
+                        <div id="Ident10_2" class="de-b edit">
+                            <p id="Intervalo10_2"></p> <!--VALOR DE B EN EL INTERVALO10-->
+                        </div>
+                        <div id="Ident11_2" class="de-b edit">
+                            <p id="Intervalo11_2"></p> <!--VALOR DE B EN EL INTERVALO11-->
+                        </div>
+                        <div id="Ident12_2" class="de-b edit">
+                            <p id="Intervalo12_2"></p> <!--VALOR DE B EN EL INTERVALO12-->
+                        </div>
+                        <div id="Ident13_2" class="de-b edit">
+                            <p id="Intervalo13_2"></p> <!--VALOR DE B EN EL INTERVALO13-->
+                        </div>
+                    </div>
+                    <!-- ACA ESTA EL DE LA F(A) -->
+                    <div class="Fa ille">
+                        <div id="Ident1_3" class="de-Fa edit">
+                            <p id="Intervalo1_3"></p> <!--Valor de Funcion de A Intervalo1-->
+                        </div>
+                        <div id="Ident2_3" class="de-Fa edit">
+                            <p id="Intervalo2_3"></p> <!--VALOR DE FUNCION DE A INTERVALO2-->
+                        </div>
+                        <div id="Ident3_3" class="de-Fa edit">
+                            <p id="Intervalo3_3"></p> <!--VALOR DE FUNCION DE A INTERVALO3-->
+                        </div>
+                        <div id="Ident4_3" class="de-Fa edit">
+                            <p id="Intervalo4_3"></p> <!--VALOR DE FUNCION DE A INTERVALO4-->
+                        </div>
+                        <div id="Ident5_3" class="de-Fa edit">
+                            <p id="Intervalo5_3"></p> <!--VALOR DE FUNCION DE A INTERVALO5-->
+                        </div>
+                        <div id="Ident6_3" class="de-Fa edit">
+                            <p id="Intervalo6_3"></p> <!--VALOR DE FUNCION DE A INTERVALO6-->
+                        </div>
+                        <div id="Ident7_3" class="de-Fa edit">
+                            <p id="Intervalo7_3"></p> <!--VALOR DE FUNCION DE A INTERVALO7-->
+                        </div>
+                        <div id="Ident8_3" class="de-Fa edit">
+                            <p id="Intervalo8_3"></p> <!--VALOR DE FUNCION DE A INTERVALO8-->
+                        </div>
+                        <div id="Ident9_3" class="de-Fa edit">
+                            <p id="Intervalo9_3"></p> <!--VALOR DE FUNCION DE A INTERVALO9-->
+                        </div>
+                        <div id="Ident10_3" class="de-Fa edit">
+                            <p id="Intervalo10_3"></p> <!--VALOR DE FUNCION DE A INTERVALO10-->
+                        </div>
+                        <div id="Ident11_3" class="de-Fa edit">
+                            <p id="Intervalo11_3"></p> <!--VALOR DE FUNCION DE A INTERVALO11-->
+                        </div>
+                        <div id="Ident12_3" class="de-Fa edit">
+                            <p id="Intervalo12_3"></p> <!--VALOR DE FUNCION DE A INTERVALO12-->
+                        </div>
+                        <div id="Ident13_3" class="de-Fa edit">
+                            <p id="Intervalo13_3"></p> <!--VALOR DE FUNCION DE A INTERVALO13-->
+                        </div>
+                    </div>
+                    <!-- ACA ESTA EL DE LA F(B) -->
+                    <div class="Fb ille">
+                        <div id="Ident1_4" class="de-Fb edit">
+                            <p id="Intervalo1_4"></p> <!--Valor de funcion de b intervalo1-->
+                        </div>
+                        <div id="Ident2_4" class="de-Fb edit">
+                            <p id="Intervalo2_4"></p> <!--VALOR DE LA FUNCION DE B INTERVALO2-->
+                        </div>
+                        <div id="Ident3_4" class="de-Fb edit">
+                            <p id="Intervalo3_4"></p> <!--VALOR DE LA FUNCION DE B INTERVALO3-->
+                        </div>
+                        <div id="Ident4_4" class="de-Fb edit">
+                            <p id="Intervalo4_4"></p> <!--VALOR DE LA FUNCION DE B INTERVALO4-->
+                        </div>
+                        <div id="Ident5_4" class="de-Fb edit">
+                            <p id="Intervalo5_4"></p> <!--VALOR DE LA FUNCION DE B INTERVALO5-->
+                        </div>
+                        <div id="Ident6_4" class="de-Fb edit">
+                            <p id="Intervalo6_4"></p> <!--VALOR DE LA FUNCION DE B INTERVALO6-->
+                        </div>
+                        <div id="Ident7_4" class="de-Fb edit">
+                            <p id="Intervalo7_4"></p> <!--VALOR DE LA FUNCION DE B INTERVALO7-->
+                        </div>
+                        <div id="Ident8_4" class="de-Fb edit">
+                            <p id="Intervalo8_4"></p> <!--VALOR DE LA FUNCION DE B INTERVALO8-->
+                        </div>
+                        <div id="Ident9_4" class="de-Fb edit">
+                            <p id="Intervalo9_4"></p> <!--VALOR DE LA FUNCION DE B INTERVALO9-->
+                        </div>
+                        <div id="Ident10_4" class="de-Fb edit">
+                            <p id="Intervalo10_4"></p> <!--VALOR DE LA FUNCION DE B INTERVALO10-->
+                        </div>
+                        <div id="Ident11_4" class="de-Fb edit">
+                            <p id="Intervalo11_4"></p> <!--VALOR DE LA FUNCION DE B INTERVALO11-->
+                        </div>
+                        <div id="Ident12_4" class="de-Fb edit">
+                            <p id="Intervalo12_4"></p> <!--VALOR DE LA FUNCION DE B INTERVALO12-->
+                        </div>
+                        <div id="Ident13_4" class="de-Fb edit">
+                            <p id="Intervalo13_4"></p> <!--VALOR DE LA FUNCION DE B INTERVALO13-->
+                        </div>
+                    </div>
+                    <!-- ACA ESTA EL DE LA XR (RECURRENCIA) -->
+                    <div id="posision5" class="xr ille">
+                        <div id="Ident1_5" class="de-xr edit">
+                            <p Id="Intervalo1_5"></p> <!-- VALOR DE LA RECURRENCIA INTERVALO 1-->
+                        </div>
+                        <div id="Ident2_5" class="de-xr edit">
+                            <p id="Intervalo2_5"></p> <!--VALOR DE LA RECURRENCIA INTERVALO2-->
+                        </div>
+                        <div id="Ident3_5" class="de-xr edit">
+                            <p id="Intervalo3_5"></p> <!--VALOR DE LA RECURRENCIA INTERVALO3-->
+                        </div>
+                        <div id="Ident4_5" class="de-xr edit">
+                            <p id="Intervalo4_5"></p> <!--VALOR DE LA RECURRENCIA INTERVALO4-->
+                        </div>
+                        <div id="Ident5_5" class="de-xr edit">
+                            <p id="Intervalo5_5"></p> <!--VALOR DE LA RECURRENCIA INTERVALO5-->
+                        </div>
+                        <div id="Ident6_5" class="de-xr edit">
+                            <p id="Intervalo6_5"></p> <!--VALOR DE LA RECURRENCIA INTERVALO6-->
+                        </div>
+                        <div id="Ident7_5" class="de-xr edit">
+                            <p id="Intervalo7_5"></p> <!--VALOR DE LA RECURRENCIA INTERVALO7-->
+                        </div>
+                        <div id="Ident8_5" class="de-xr edit">
+                            <p id="Intervalo8_5"></p> <!--VALOR DE LA RECURRENCIA INTERVALO8-->
+                        </div>
+                        <div id="Ident9_5" class="de-xr edit">
+                            <p id="Intervalo9_5"></p> <!--VALOR DE LA RECURRENCIA INTERVALO9-->
+                        </div>
+                        <div id="Ident10_5" class="de-xr edit">
+                            <p id="Intervalo10_5"></p> <!--VALOR DE LA RECURRENCIA INTERVALo10-->
+                        </div>
+                        <div id="Ident11_5" class="de-xr edit">
+                            <p id="Intervalo11_5"></p> <!--VALOR DE LA RECURRENCIA INTERVALO11-->
+                        </div>
+                        <div id="Ident12_5" class="de-xr edit">
+                            <p id="Intervalo12_5"></p> <!--VALOR DE LA RECURRENCIA INTERVALO12-->
+                        </div>
+                        <div id="Ident13_5" class="de-xr edit">
+                            <p id="Intervalo13_5"></p> <!--VALOR DE LA RECURRENCIA INTERVALO13-->
+                        </div>
+                    </div>
+                    <!-- ACA ESTA LA F(XR) FUNCION DE RECURRENCIA -->
+                    <div id="posision6" class="Fxr ille">
+                        <div id="Ident1_6" class="de-Fxre edit">
+                            <p id="Intervalo1_6"></p> <!--valor de funcion de xr INTERVALO1-->
+                        </div>
+                        <div id="Ident2_6" class="de-Fxre edit">
+                            <p id="Intervalo2_6"></p> <!--valor de la funcion de xr INTERVALO2-->
+                        </div>
+                        <div id="Ident3_6" class="de-Fxre edit">
+                            <p id="Intervalo3_6"></p> <!--valor de la funcion de xr INTERVALO3-->
+                        </div>
+                        <div id="Ident4_6" class="de-Fxre edit">
+                            <p id="Intervalo4_6"></p> <!--valor de la funcion de xr INTERVALO4-->
+                        </div>
+                        <div id="Ident5_6" class="de-Fxre edit">
+                            <p id="Intervalo5_6"></p> <!--valor de la funcion de xr INTERVALO5-->
+                        </div>
+                        <div id="Ident6_6" class="de-Fxre edit">
+                            <p id="Intervalo6_6"></p> <!--valor de la funcion de xr INTERVALO6-->
+                        </div>
+                        <div id="Ident7_6" class="de-Fxre edit">
+                            <p id="Intervalo7_6"></p> <!--valor de la funcion de xr INTERVALO7-->
+                        </div>
+                        <div id="Ident8_6" class="de-Fxre edit">
+                            <p id="Intervalo8_6"></p> <!--valor de la funcion de xr INTERVALO8-->
+                        </div>
+                        <div id="Ident9_6" class="de-Fxre edit">
+                            <p id="Intervalo9_6"></p> <!--valor de la funcion de xr INTERVALO9-->
+                        </div>
+                        <div id="Ident10_6" class="de-Fxre edit">
+                            <p id="Intervalo10_6"></p> <!--valor de la funcion de xr INTERVALO10-->
+                        </div>
+                        <div id="Ident11_6" class="de-Fxre edit">
+                            <p id="Intervalo11_6"></p> <!--valor de la funcion de xr INTERVALO11-->
+                        </div>
+                        <div id="Ident12_6" class="de-Fxre edit">
+                            <p id="Intervalo12_6"></p> <!--valor de la funcion de xr INTERVALO12-->
+                        </div>
+                        <div id="Ident13_6" class="de-Fxre edit">
+                            <p id="Intervalo13_6"></p> <!--valor de la funcion de xr INTERVALO13-->
+                        </div>
+                    </div>
+                    <!-- ACA ESTA LA TOLERANCIA -->
+                    <div id="posision7" class="T ille">
+                        <div id="Ident1_7" class="de-T edit">
+                            <p id="Intervalo1_7"></p> <!--valor de tolerancia INTERVALO1-->
+                        </div>
+                        <div id="Ident2_7" class="de-T edit">
+                            <p id="Intervalo2_7"></p> <!--valor de la tolerancia INTERVALO2-->
+                        </div>
+                        <div id="Ident3_7" class="de-T edit">
+                            <p id="Intervalo3_7"></p>
+                        </div>
+                        <div id="Ident4_7" class="de-T edit">
+                            <p id="Intervalo4_7"></p>
+                        </div>
+                        <div id="Ident5_7" class="de-T edit">
+                            <p id="Intervalo5_7"></p>
+                        </div>
+                        <div id="Ident6_7" class="de-T edit">
+                            <p id="Intervalo6_7"></p>
+                        </div>
+                        <div id="Ident7_7" class="de-T edit">
+                            <p id="Intervalo7_7"></p>
+                        </div>
+                        <div id="Ident8_7" class="de-T edit">
+                            <p id="Intervalo8_7"></p>
+                        </div>
+                        <div id="Ident9_7" class="de-T edit">
+                            <p id="Intervalo9_7"></p>
+                        </div>
+                        <div id="Ident10_7" class="de-T edit">
+                            <p id="Intervalo10_7"></p>
+                        </div>
+                        <div id="Ident11_7" class="de-T edit">
+                            <p id="Intervalo11_7"></p>
+                        </div>
+                        <div id="Ident12_7" class="de-T edit">
+                            <p id="Intervalo12_7"></p>
+                        </div>
+                        <div id="Ident13_7" class="de-T edit">
+                            <p id="Intervalo13_7"></p>
+                        </div>
+                        <!-- Esta seccion solo se utiliza en el metodo de MILLER -->
+                    </div>
+                    <div style="display: none;" id="posision8" class="T ille">
+                        <div id="Ident1_8" class="de-T edit">
+                            <p id="Intervalo1_8"></p> <!--valor de tolerancia INTERVALO1-->
+                        </div>
+                        <div id="Ident2_8" class="de-T edit">
+                            <p id="Intervalo2_8"></p> <!--valor de la tolerancia INTERVALO2-->
+                        </div>
+                        <div id="Ident3_8" class="de-T edit">
+                            <p id="Intervalo3_8"></p>
+                        </div>
+                        <div id="Ident4_8" class="de-T edit">
+                            <p id="Intervalo4_8"></p>
+                        </div>
+                        <div id="Ident5_8" class="de-T edit">
+                            <p id="Intervalo5_8"></p>
+                        </div>
+                        <div id="Ident6_8" class="de-T edit">
+                            <p id="Intervalo6_8"></p>
+                        </div>
+                        <div id="Ident7_8" class="de-T edit">
+                            <p id="Intervalo7_8"></p>
+                        </div>
+                        <div id="Ident8_8" class="de-T edit">
+                            <p id="Intervalo8_8"></p>
+                        </div>
+                        <div id="Ident9_8" class="de-T edit">
+                            <p id="Intervalo9_8"></p>
+                        </div>
+                        <div id="Ident10_8" class="de-T edit">
+                            <p id="Intervalo10_8"></p>
+                        </div>
+                        <div id="Ident11_8" class="de-T edit">
+                            <p id="Intervalo11_8"></p>
+                        </div>
+                        <div id="Ident12_8" class="de-T edit">
+                            <p id="Intervalo12_8"></p>
+                        </div>
+                        <div id="Ident13_8" class="de-T edit">
+                            <p id="Intervalo13_8"></p>
+                        </div>
+                    </div>
+                    <div style="display: none;" id="posision9" class="T ille">
+                        <div id="Ident1_9" class="de-T edit">
+                            <p id="Intervalo1_9"></p> <!--valor de tolerancia INTERVALO1-->
+                        </div>
+                        <div id="Ident2_9" class="de-T edit">
+                            <p id="Intervalo2_9"></p> <!--valor de la tolerancia INTERVALO2-->
+                        </div>
+                        <div id="Ident3_9" class="de-T edit">
+                            <p id="Intervalo3_9"></p>
+                        </div>
+                        <div id="Ident4_9" class="de-T edit">
+                            <p id="Intervalo4_9"></p>
+                        </div>
+                        <div id="Ident5_9" class="de-T edit">
+                            <p id="Intervalo5_9"></p>
+                        </div>
+                        <div id="Ident6_9" class="de-T edit">
+                            <p id="Intervalo6_9"></p>
+                        </div>
+                        <div id="Ident7_9" class="de-T edit">
+                            <p id="Intervalo7_9"></p>
+                        </div>
+                        <div id="Ident8_9" class="de-T edit">
+                            <p id="Intervalo8_9"></p>
+                        </div>
+                        <div id="Ident9_9" class="de-T edit">
+                            <p id="Intervalo9_9"></p>
+                        </div>
+                        <div id="Ident10_9" class="de-T edit">
+                            <p id="Intervalo10_9"></p>
+                        </div>
+                        <div id="Ident11_9" class="de-T edit">
+                            <p id="Intervalo11_9"></p>
+                        </div>
+                        <div id="Ident12_9" class="de-T edit">
+                            <p id="Intervalo12_9"></p>
+                        </div>
+                        <div id="Ident13_9" class="de-T edit">
+                            <p id="Intervalo13_9"></p>
+                        </div>
+                    </div>
+                    <div style="display: none;" id="posision10" class="T ille">
+                        <div id="Ident1_10" class="de-T edit">
+                            <p id="Intervalo1_10"></p> <!--valor de tolerancia INTERVALO1-->
+                        </div>
+                        <div id="Ident2_10" class="de-T edit">
+                            <p id="Intervalo2_10"></p> <!--valor de la tolerancia INTERVALO2-->
+                        </div>
+                        <div id="Ident3_10" class="de-T edit">
+                            <p id="Intervalo3_10"></p>
+                        </div>
+                        <div id="Ident4_10" class="de-T edit">
+                            <p id="Intervalo4_10"></p>
+                        </div>
+                        <div id="Ident5_10" class="de-T edit">
+                            <p id="Intervalo5_10"></p>
+                        </div>
+                        <div id="Ident6_10" class="de-T edit">
+                            <p id="Intervalo6_10"></p>
+                        </div>
+                        <div id="Ident7_10" class="de-T edit">
+                            <p id="Intervalo7_10"></p>
+                        </div>
+                        <div id="Ident8_10" class="de-T edit">
+                            <p id="Intervalo8_10"></p>
+                        </div>
+                        <div id="Ident9_10" class="de-T edit">
+                            <p id="Intervalo9_10"></p>
+                        </div>
+                        <div id="Ident10_10" class="de-T edit">
+                            <p id="Intervalo10_10"></p>
+                        </div>
+                        <div id="Ident11_10" class="de-T edit">
+                            <p id="Intervalo11_10"></p>
+                        </div>
+                        <div id="Ident12_10" class="de-T edit">
+                            <p id="Intervalo12_10"></p>
+                        </div>
+                        <div id="Ident13_10" class="de-T edit">
+                            <p id="Intervalo13_10"></p>
+                        </div>
+                    </div>
+                    <div style="display: none;" id="posision11" class="T ille">
+                        <div id="Ident1_11" class="de-T edit">
+                            <p id="Intervalo1_11"></p> <!--valor de tolerancia INTERVALO1-->
+                        </div>
+                        <div id="Ident2_11" class="de-T edit">
+                            <p id="Intervalo2_11"></p> <!--valor de la tolerancia INTERVALO2-->
+                        </div>
+                        <div id="Ident3_11" class="de-T edit">
+                            <p id="Intervalo3_11"></p>
+                        </div>
+                        <div id="Ident4_11" class="de-T edit">
+                            <p id="Intervalo4_11"></p>
+                        </div>
+                        <div id="Ident5_11" class="de-T edit">
+                            <p id="Intervalo5_11"></p>
+                        </div>
+                        <div id="Ident6_11" class="de-T edit">
+                            <p id="Intervalo6_11"></p>
+                        </div>
+                        <div id="Ident7_11" class="de-T edit">
+                            <p id="Intervalo7_11"></p>
+                        </div>
+                        <div id="Ident8_11" class="de-T edit">
+                            <p id="Intervalo8_11"></p>
+                        </div>
+                        <div id="Ident9_11" class="de-T edit">
+                            <p id="Intervalo9_11"></p>
+                        </div>
+                        <div id="Ident10_11" class="de-T edit">
+                            <p id="Intervalo10_11"></p>
+                        </div>
+                        <div id="Ident11_11" class="de-T edit">
+                            <p id="Intervalo11_11"></p>
+                        </div>
+                        <div id="Ident12_11" class="de-T edit">
+                            <p id="Intervalo12_11"></p>
+                        </div>
+                        <div id="Ident13_11" class="de-T edit">
+                            <p id="Intervalo13_11"></p>
+                        </div>
+                    </div>
+                    <div style="display: none;" id="posision12" class="T ille">
+                        <div id="Ident1_12" class="de-T edit">
+                            <p id="Intervalo1_12"></p> <!--valor de tolerancia INTERVALO1-->
+                        </div>
+                        <div id="Ident2_12" class="de-T edit">
+                            <p id="Intervalo2_12"></p> <!--valor de la tolerancia INTERVALO2-->
+                        </div>
+                        <div id="Ident3_12" class="de-T edit">
+                            <p id="Intervalo3_12"></p>
+                        </div>
+                        <div id="Ident4_12" class="de-T edit">
+                            <p id="Intervalo4_12"></p>
+                        </div>
+                        <div id="Ident5_12" class="de-T edit">
+                            <p id="Intervalo5_12"></p>
+                        </div>
+                        <div id="Ident6_12" class="de-T edit">
+                            <p id="Intervalo6_12"></p>
+                        </div>
+                        <div id="Ident7_12" class="de-T edit">
+                            <p id="Intervalo7_12"></p>
+                        </div>
+                        <div id="Ident8_12" class="de-T edit">
+                            <p id="Intervalo8_12"></p>
+                        </div>
+                        <div id="Ident9_12" class="de-T edit">
+                            <p id="Intervalo9_12"></p>
+                        </div>
+                        <div id="Ident10_12" class="de-T edit">
+                            <p id="Intervalo10_12"></p>
+                        </div>
+                        <div id="Ident11_12" class="de-T edit">
+                            <p id="Intervalo11_12"></p>
+                        </div>
+                        <div id="Ident12_12" class="de-T edit">
+                            <p id="Intervalo12_12"></p>
+                        </div>
+                        <div id="Ident13_12" class="de-T edit">
+                            <p id="Intervalo13_12"></p>
+                        </div>
+                    </div>
+                    <div style="display: none;" id="posision13" class="T ille">
+                        <div id="Ident1_13" class="de-T edit">
+                            <p id="Intervalo1_13"></p> <!--valor de tolerancia INTERVALO1-->
+                        </div>
+                        <div id="Ident2_13" class="de-T edit">
+                            <p id="Intervalo2_13"></p> <!--valor de la tolerancia INTERVALO2-->
+                        </div>
+                        <div id="Ident3_13" class="de-T edit">
+                            <p id="Intervalo3_13"></p>
+                        </div>
+                        <div id="Ident4_13" class="de-T edit">
+                            <p id="Intervalo4_13"></p>
+                        </div>
+                        <div id="Ident5_13" class="de-T edit">
+                            <p id="Intervalo5_13"></p>
+                        </div>
+                        <div id="Ident6_13" class="de-T edit">
+                            <p id="Intervalo6_13"></p>
+                        </div>
+                        <div id="Ident7_13" class="de-T edit">
+                            <p id="Intervalo7_13"></p>
+                        </div>
+                        <div id="Ident8_13" class="de-T edit">
+                            <p id="Intervalo8_13"></p>
+                        </div>
+                        <div id="Ident9_13" class="de-T edit">
+                            <p id="Intervalo9_13"></p>
+                        </div>
+                        <div id="Ident10_13" class="de-T edit">
+                            <p id="Intervalo10_13"></p>
+                        </div>
+                        <div id="Ident11_13" class="de-T edit">
+                            <p id="Intervalo11_13"></p>
+                        </div>
+                        <div id="Ident12_13" class="de-T edit">
+                            <p id="Intervalo12_13"></p>
+                        </div>
+                        <div id="Ident13_13" class="de-T edit">
+                            <p id="Intervalo13_13"></p>
+                        </div>
+                    </div>
+                    <div style="display: none;" id="posision14" class="T ille">
+                        <div id="Ident1_14" class="de-T edit">
+                            <p id="Intervalo1_14"></p> <!--valor de tolerancia INTERVALO1-->
+                        </div>
+                        <div id="Ident2_14" class="de-T edit">
+                            <p id="Intervalo2_14"></p> <!--valor de la tolerancia INTERVALO2-->
+                        </div>
+                        <div id="Ident3_14" class="de-T edit">
+                            <p id="Intervalo3_14"></p>
+                        </div>
+                        <div id="Ident4_14" class="de-T edit">
+                            <p id="Intervalo4_14"></p>
+                        </div>
+                        <div id="Ident5_14" class="de-T edit">
+                            <p id="Intervalo5_14"></p>
+                        </div>
+                        <div id="Ident6_14" class="de-T edit">
+                            <p id="Intervalo6_14"></p>
+                        </div>
+                        <div id="Ident7_14" class="de-T edit">
+                            <p id="Intervalo7_14"></p>
+                        </div>
+                        <div id="Ident8_14" class="de-T edit">
+                            <p id="Intervalo8_14"></p>
+                        </div>
+                        <div id="Ident9_14" class="de-T edit">
+                            <p id="Intervalo9_14"></p>
+                        </div>
+                        <div id="Ident10_14" class="de-T edit">
+                            <p id="Intervalo10_14"></p>
+                        </div>
+                        <div id="Ident11_14" class="de-T edit">
+                            <p id="Intervalo11_14"></p>
+                        </div>
+                        <div id="Ident12_14" class="de-T edit">
+                            <p id="Intervalo12_14"></p>
+                        </div>
+                        <div id="Ident13_14" class="de-T edit">
+                            <p id="Intervalo13_14"></p>
+                        </div>
+                    </div>
+                    <div style="display: none;" id="posision15" class="T ille">
+                        <div id="Ident1_15" class="de-T edit">
+                            <p id="Intervalo1_15"></p> <!--valor de tolerancia INTERVALO1-->
+                        </div>
+                        <div id="Ident2_15" class="de-T edit">
+                            <p id="Intervalo2_15"></p> <!--valor de la tolerancia INTERVALO2-->
+                        </div>
+                        <div id="Ident3_15" class="de-T edit">
+                            <p id="Intervalo3_15"></p>
+                        </div>
+                        <div id="Ident4_15" class="de-T edit">
+                            <p id="Intervalo4_15"></p>
+                        </div>
+                        <div id="Ident5_15" class="de-T edit">
+                            <p id="Intervalo5_15"></p>
+                        </div>
+                        <div id="Ident6_15" class="de-T edit">
+                            <p id="Intervalo6_15"></p>
+                        </div>
+                        <div id="Ident7_15" class="de-T edit">
+                            <p id="Intervalo7_15"></p>
+                        </div>
+                        <div id="Ident8_15" class="de-T edit">
+                            <p id="Intervalo8_15"></p>
+                        </div>
+                        <div id="Ident9_15" class="de-T edit">
+                            <p id="Intervalo9_15"></p>
+                        </div>
+                        <div id="Ident10_15" class="de-T edit">
+                            <p id="Intervalo10_15"></p>
+                        </div>
+                        <div id="Ident11_15" class="de-T edit">
+                            <p id="Intervalo11_15"></p>
+                        </div>
+                        <div id="Ident12_15" class="de-T edit">
+                            <p id="Intervalo12_15"></p>
+                        </div>
+                        <div id="Ident13_15" class="de-T edit">
+                            <p id="Intervalo13_15"></p>
+                        </div>
+                    </div>
+                    <div style="display: none;" id="posision16" class="T ille">
+                        <div id="Ident1_16" class="de-T edit">
+                            <p id="Intervalo1_16"></p> <!--valor de tolerancia INTERVALO1-->
+                        </div>
+                        <div id="Ident2_16" class="de-T edit">
+                            <p id="Intervalo2_16"></p> <!--valor de la tolerancia INTERVALO2-->
+                        </div>
+                        <div id="Ident3_16" class="de-T edit">
+                            <p id="Intervalo3_16"></p>
+                        </div>
+                        <div id="Ident4_16" class="de-T edit">
+                            <p id="Intervalo4_16"></p>
+                        </div>
+                        <div id="Ident5_16" class="de-T edit">
+                            <p id="Intervalo5_16"></p>
+                        </div>
+                        <div id="Ident6_16" class="de-T edit">
+                            <p id="Intervalo6_16"></p>
+                        </div>
+                        <div id="Ident7_16" class="de-T edit">
+                            <p id="Intervalo7_16"></p>
+                        </div>
+                        <div id="Ident8_16" class="de-T edit">
+                            <p id="Intervalo8_16"></p>
+                        </div>
+                        <div id="Ident9_16" class="de-T edit">
+                            <p id="Intervalo9_16"></p>
+                        </div>
+                        <div id="Ident10_16" class="de-T edit">
+                            <p id="Intervalo10_16"></p>
+                        </div>
+                        <div id="Ident11_16" class="de-T edit">
+                            <p id="Intervalo11_16"></p>
+                        </div>
+                        <div id="Ident12_16" class="de-T edit">
+                            <p id="Intervalo12_16"></p>
+                        </div>
+                        <div id="Ident13_16" class="de-T edit">
+                            <p id="Intervalo13_16"></p>
+                        </div>
+                    </div>
+                    <div style="display: none;" id="posision17" class="T ille">
+                        <div id="Ident1_17" class="de-T edit">
+                            <p id="Intervalo1_17"></p> <!--valor de tolerancia INTERVALO1-->
+                        </div>
+                        <div id="Ident2_17" class="de-T edit">
+                            <p id="Intervalo2_17"></p> <!--valor de la tolerancia INTERVALO2-->
+                        </div>
+                        <div id="Ident3_17" class="de-T edit">
+                            <p id="Intervalo3_17"></p>
+                        </div>
+                        <div id="Ident4_17" class="de-T edit">
+                            <p id="Intervalo4_17"></p>
+                        </div>
+                        <div id="Ident5_17" class="de-T edit">
+                            <p id="Intervalo5_17"></p>
+                        </div>
+                        <div id="Ident6_17" class="de-T edit">
+                            <p id="Intervalo6_17"></p>
+                        </div>
+                        <div id="Ident7_17" class="de-T edit">
+                            <p id="Intervalo7_17"></p>
+                        </div>
+                        <div id="Ident8_17" class="de-T edit">
+                            <p id="Intervalo8_17"></p>
+                        </div>
+                        <div id="Ident9_17" class="de-T edit">
+                            <p id="Intervalo9_17"></p>
+                        </div>
+                        <div id="Ident10_17" class="de-T edit">
+                            <p id="Intervalo10_17"></p>
+                        </div>
+                        <div id="Ident11_17" class="de-T edit">
+                            <p id="Intervalo11_17"></p>
+                        </div>
+                        <div id="Ident12_17" class="de-T edit">
+                            <p id="Intervalo12_17"></p>
+                        </div>
+                        <div id="Ident13_17" class="de-T edit">
+                            <p id="Intervalo13_17"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Esta es la segunda tabla (solo se usa en metodo de newton mejorado) -->
+        <div id="resultadosTabla2" class="resultados tabla-new" style="display: none;">
+            <div class="encabezado">
+                <div class="de-encabezados">
+                    <p>I</p>
+                </div>
+                <div class="de-encabezados">
+                    <p id="e-1">xi</p>
+                </div>
+                <div class="de-encabezados">
+                    <p id="e-2">F(xi)</p>
+                </div>
+                <div class="de-encabezados">
+                    <p id="e-3">F'(xi)</p>
+                </div>
+                <div class="de-encabezados">
+                    <p id="e-4">F"(xi)</p>
+                </div>
+                <div class="de-encabezados">
+                    <p id="e-5">x1+1</p>
+                </div>
+                <div id="encabezado1" class="de-encabezados">
+                    <p id="e-6">T</p>
+                </div>
+            </div>
+            <div style="margin-bottom: 50px;" class="calculados">
+                <div class="de-calculados">
+                    <div class="I ille">
+                        <div id="Rosibel1_0" class="de-I edit">
+                            <p>1.</p>
+                        </div>
+                        <div id="Rosibel2_0" class="de-I edit">
+                            <p>2.</p>
+                        </div>
+                        <div id="Rosibel3_0" class="de-I edit">
+                            <p>3.</p>
+                        </div>
+                        <div id="Rosibel4_0" class="de-I edit">
+                            <p>4.</p>
+                        </div>
+                        <div id="Rosibel5_0" class="de-I edit">
+                            <p>5.</p>
+                        </div>
+                        <div id="Rosibel6_0" class="de-I edit">
+                            <p>6.</p>
+                        </div>
+                        <div id="Rosibel7_0" class="de-I edit">
+                            <p>7.</p>
+                        </div>
+                        <div id="Rosibel8_0" class="de-I edit">
+                            <p>8.</p>
+                        </div>
+                        <div id="Rosibel9_0" class="de-I edit">
+                            <p>9.</p>
+                        </div>
+                        <div id="Rosibel10_0" class="de-I edit">
+                            <p>10.</p>
+                        </div>
+                        <div id="Rosibel11_0" class="de-I edit">
+                            <p>11.</p>
+                        </div>
+                        <div id="Rosibel12_0" class="de-I edit">
+                            <p>12.</p>
+                        </div>
+                        <div id="Rosibel13_0" class="de-I edit">
+                            <p>13.</p>
+                        </div>
+                    </div>
+                    <!-- ACA ESTA EL DE LA A -->
+                    <div class="a ille">
+                        <div id="Rosibel1_1" class="de-a edit">
+                            <p id="Intervalo1_1D"></p> <!--VALOR DE A INTERVALO1-->
+                        </div>
+                        <div id="Rosibel2_1" class="de-a edit">
+                            <p id="Intervalo2_1D"></p> <!--VALOR DE A EN EL INTERVALO2-->
+                        </div>
+                        <div id="Rosibel3_1" class="de-a edit">
+                            <p ID="Intervalo3_1D">
+                            <p> <!--VALOR DE A EN EL INTERVALO3-->
+                        </div>
+                        <div id="Rosibel4_1" class="de-a edit">
+                            <p id="Intervalo4_1D"></p> <!--VALOR DE A EN EL INTERVALO4-->
+                        </div>
+                        <div id="Rosibel5_1" class="de-a edit">
+                            <p id="Intervalo5_1D"></p> <!--VALOR DE A EN EL INTERAVLO5-->
+                        </div>
+                        <div id="Rosibel6_1" class="de-a edit">
+                            <p Id="Intervalo6_1D"></p> <!--VALOR DE A EN EL INTERVALO6-->
+                        </div>
+                        <div id="Rosibel7_1" class="de-a edit">
+                            <p id="Intervalo7_1D"></p> <!--VALOR DE A EN EL INTERVALO7-->
+                        </div>
+                        <div id="Rosibel8_1" class="de-a edit">
+                            <p id="Intervalo8_1D"></p> <!--VALOR DE A EN EL INTERVALO8-->
+                        </div>
+                        <div id="Rosibel9_1" class="de-a edit">
+                            <p id="Intervalo9_1D"></p> <!--VALOR DE A EN EL INTERVALO9-->
+                        </div>
+                        <div id="Rosibel10_1" class="de-a edit">
+                            <p id="Intervalo10_1D"></p> <!--VALOR DE A EN EL INTERVALO10-->
+                        </div>
+                        <div id="Rosibel11_1" class="de-a edit">
+                            <p id="Intervalo11_1D"></p> <!--VALOR DE A EN EL INTERVALO11-->
+                        </div>
+                        <div id="Rosibel12_1" class="de-a edit">
+                            <p id="Intervalo12_1D"></p> <!--VALOR DE A EN EL INTERVALO12-->
+                        </div>
+                        <div id="Rosibel13_1" class="de-a edit">
+                            <p id="Intervalo13_1D"></p> <!--VALOR DE A EN EL INTERVALO13-->
+                        </div>
+                    </div>
+                    <!-- ACA ESTA EL DE LA B -->
+                    <div class="b ille">
+                        <div id="Rosibel1_2" class="de-b edit">
+                            <p id="Intervalo1_2D"></p> <!--Valor de B Intervalo1 -->
+                        </div>
+                        <div id="Rosibel2_2" class="de-b edit">
+                            <p ID="Intervalo2_2D"></p> <!--VALOR DE B EN EL INTERVALO2-->
+                        </div>
+                        <div id="Rosibel3_2" class="de-b edit">
+                            <p id="Intervalo3_2D"></p> <!--VALOR DE B EN EL INTERVALO3-->
+                        </div>
+                        <div id="Rosibel4_2" class="de-b edit">
+                            <p id="Intervalo4_2D"></p> <!--VALOR DE B EN EL INTERVALO4-->
+                        </div>
+                        <div id="Rosibel5_2" class="de-b edit">
+                            <p id="Intervalo5_2D"></p> <!--VALOR DE B EN EL INTERVALO5-->
+                        </div>
+                        <div id="Rosibel6_2" class="de-b edit">
+                            <p id="Intervalo6_2D"></p> <!--VALOR DE B EN EL INTERVALO6-->
+                        </div>
+                        <div id="Rosibel7_2" class="de-b edit">
+                            <p id="Intervalo7_2D"></p> <!--VALOR DE B EN EL INTERVALO7-->
+                        </div>
+                        <div id="Rosibel8_2" class="de-b edit">
+                            <p id="Intervalo8_2D"></p> <!--VALOR DE B EN EL INTERVALO8-->
+                        </div>
+                        <div id="Rosibel9_2" class="de-b edit">
+                            <p id="Intervalo9_2D"></p> <!--VALOR DE B EN EL INTERVALO9-->
+                        </div>
+                        <div id="Rosibel10_2" class="de-b edit">
+                            <p id="Intervalo10_2D"></p> <!--VALOR DE B EN EL INTERVALO10-->
+                        </div>
+                        <div id="Rosibel11_2" class="de-b edit">
+                            <p id="Intervalo11_2D"></p> <!--VALOR DE B EN EL INTERVALO11-->
+                        </div>
+                        <div id="Rosibel12_2" class="de-b edit">
+                            <p id="Intervalo12_2D"></p> <!--VALOR DE B EN EL INTERVALO12-->
+                        </div>
+                        <div id="Rosibel13_2" class="de-b edit">
+                            <p id="Intervalo13_2D"></p> <!--VALOR DE B EN EL INTERVALO13-->
+                        </div>
+                    </div>
+                    <!-- ACA ESTA EL DE LA F(A) -->
+                    <div class="Fa ille">
+                        <div id="Rosibel1_3" class="de-Fa edit">
+                            <p id="Intervalo1_3D"></p> <!--Valor de Funcion de A Intervalo1-->
+                        </div>
+                        <div id="Rosibel2_3" class="de-Fa edit">
+                            <p id="Intervalo2_3D"></p> <!--VALOR DE FUNCION DE A INTERVALO2-->
+                        </div>
+                        <div id="Rosibel3_3" class="de-Fa edit">
+                            <p id="Intervalo3_3D"></p> <!--VALOR DE FUNCION DE A INTERVALO3-->
+                        </div>
+                        <div id="Rosibel4_3" class="de-Fa edit">
+                            <p id="Intervalo4_3D"></p> <!--VALOR DE FUNCION DE A INTERVALO4-->
+                        </div>
+                        <div id="Rosibel5_3" class="de-Fa edit">
+                            <p id="Intervalo5_3D"></p> <!--VALOR DE FUNCION DE A INTERVALO5-->
+                        </div>
+                        <div id="Rosibel6_3" class="de-Fa edit">
+                            <p id="Intervalo6_3D"></p> <!--VALOR DE FUNCION DE A INTERVALO6-->
+                        </div>
+                        <div id="Rosibel7_3" class="de-Fa edit">
+                            <p id="Intervalo7_3D"></p> <!--VALOR DE FUNCION DE A INTERVALO7-->
+                        </div>
+                        <div id="Rosibel8_3" class="de-Fa edit">
+                            <p id="Intervalo8_3D"></p> <!--VALOR DE FUNCION DE A INTERVALO8-->
+                        </div>
+                        <div id="Rosibel9_3" class="de-Fa edit">
+                            <p id="Intervalo9_3D"></p> <!--VALOR DE FUNCION DE A INTERVALO9-->
+                        </div>
+                        <div id="Rosibel10_3" class="de-Fa edit">
+                            <p id="Intervalo10_3D"></p> <!--VALOR DE FUNCION DE A INTERVALO10-->
+                        </div>
+                        <div id="Rosibel11_3" class="de-Fa edit">
+                            <p id="Intervalo11_3D"></p> <!--VALOR DE FUNCION DE A INTERVALO11-->
+                        </div>
+                        <div id="Rosibel12_3" class="de-Fa edit">
+                            <p id="Intervalo12_3D"></p> <!--VALOR DE FUNCION DE A INTERVALO12-->
+                        </div>
+                        <div id="Rosibel13_3" class="de-Fa edit">
+                            <p id="Intervalo13_3D"></p> <!--VALOR DE FUNCION DE A INTERVALO13-->
+                        </div>
+                    </div>
+                    <!-- ACA ESTA EL DE LA F(B) -->
+                    <div class="Fb ille">
+                        <div id="Rosibel1_4" class="de-Fb edit">
+                            <p id="Intervalo1_4D"></p> <!--Valor de funcion de b intervalo1-->
+                        </div>
+                        <div id="Rosibel2_4" class="de-Fb edit">
+                            <p id="Intervalo2_4D"></p> <!--VALOR DE LA FUNCION DE B INTERVALO2-->
+                        </div>
+                        <div id="Rosibel3_4" class="de-Fb edit">
+                            <p id="Intervalo3_4D"></p> <!--VALOR DE LA FUNCION DE B INTERVALO3-->
+                        </div>
+                        <div id="Rosibel4_4" class="de-Fb edit">
+                            <p id="Intervalo4_4D"></p> <!--VALOR DE LA FUNCION DE B INTERVALO4-->
+                        </div>
+                        <div id="Rosibel5_4" class="de-Fb edit">
+                            <p id="Intervalo5_4D"></p> <!--VALOR DE LA FUNCION DE B INTERVALO5-->
+                        </div>
+                        <div id="Rosibel6_4" class="de-Fb edit">
+                            <p id="Intervalo6_4D"></p> <!--VALOR DE LA FUNCION DE B INTERVALO6-->
+                        </div>
+                        <div id="Rosibel7_4" class="de-Fb edit">
+                            <p id="Intervalo7_4D"></p> <!--VALOR DE LA FUNCION DE B INTERVALO7-->
+                        </div>
+                        <div id="Rosibel8_4" class="de-Fb edit">
+                            <p id="Intervalo8_4D"></p> <!--VALOR DE LA FUNCION DE B INTERVALO8-->
+                        </div>
+                        <div id="Rosibel9_4" class="de-Fb edit">
+                            <p id="Intervalo9_4D"></p> <!--VALOR DE LA FUNCION DE B INTERVALO9-->
+                        </div>
+                        <div id="Rosibel10_4" class="de-Fb edit">
+                            <p id="Intervalo10_4D"></p> <!--VALOR DE LA FUNCION DE B INTERVALO10-->
+                        </div>
+                        <div id="Rosibel11_4" class="de-Fb edit">
+                            <p id="Intervalo11_4D"></p> <!--VALOR DE LA FUNCION DE B INTERVALO11-->
+                        </div>
+                        <div id="Rosibel12_4" class="de-Fb edit">
+                            <p id="Intervalo12_4D"></p> <!--VALOR DE LA FUNCION DE B INTERVALO12-->
+                        </div>
+                        <div id="Rosibel13_4" class="de-Fb edit">
+                            <p id="Intervalo13_4D"></p> <!--VALOR DE LA FUNCION DE B INTERVALO13-->
+                        </div>
+                    </div>
+                    <!-- ACA ESTA EL DE LA XR (RECURRENCIA) -->
+                    <div id="posision5" class="xr ille">
+                        <div id="Rosibel1_5" class="de-xr edit">
+                            <p Id="Intervalo1_5D"></p> <!-- VALOR DE LA RECURRENCIA INTERVALO 1-->
+                        </div>
+                        <div id="Rosibel2_5" class="de-xr edit">
+                            <p id="Intervalo2_5D"></p> <!--VALOR DE LA RECURRENCIA INTERVALO2-->
+                        </div>
+                        <div id="Rosibel3_5" class="de-xr edit">
+                            <p id="Intervalo3_5D"></p> <!--VALOR DE LA RECURRENCIA INTERVALO3-->
+                        </div>
+                        <div id="Rosibel4_5" class="de-xr edit">
+                            <p id="Intervalo4_5D"></p> <!--VALOR DE LA RECURRENCIA INTERVALO4-->
+                        </div>
+                        <div id="Rosibel5_5" class="de-xr edit">
+                            <p id="Intervalo5_5D"></p> <!--VALOR DE LA RECURRENCIA INTERVALO5-->
+                        </div>
+                        <div id="Rosibel6_5" class="de-xr edit">
+                            <p id="Intervalo6_5D"></p> <!--VALOR DE LA RECURRENCIA INTERVALO6-->
+                        </div>
+                        <div id="Rosibel7_5" class="de-xr edit">
+                            <p id="Intervalo7_5D"></p> <!--VALOR DE LA RECURRENCIA INTERVALO7-->
+                        </div>
+                        <div id="Rosibel8_5" class="de-xr edit">
+                            <p id="Intervalo8_5D"></p> <!--VALOR DE LA RECURRENCIA INTERVALO8-->
+                        </div>
+                        <div id="Rosibel9_5" class="de-xr edit">
+                            <p id="Intervalo9_5D"></p> <!--VALOR DE LA RECURRENCIA INTERVALO9-->
+                        </div>
+                        <div id="Rosibel10_5" class="de-xr edit">
+                            <p id="Intervalo10_5D"></p> <!--VALOR DE LA RECURRENCIA INTERVALo10-->
+                        </div>
+                        <div id="Rosibel11_5" class="de-xr edit">
+                            <p id="Intervalo11_5D"></p> <!--VALOR DE LA RECURRENCIA INTERVALO11-->
+                        </div>
+                        <div id="Rosibel12_5" class="de-xr edit">
+                            <p id="Intervalo12_5D"></p> <!--VALOR DE LA RECURRENCIA INTERVALO12-->
+                        </div>
+                        <div id="Rosibel13_5" class="de-xr edit">
+                            <p id="Intervalo13_5D"></p> <!--VALOR DE LA RECURRENCIA INTERVALO13-->
+                        </div>
+                    </div>
+                    <!-- ACA ESTA LA F(XR) FUNCION DE RECURRENCIA -->
+                    <div id="posision6" class="Fxr ille">
+                        <div id="Rosibel1_6" class="de-Fxre edit">
+                            <p id="Intervalo1_6D"></p> <!--valor de funcion de xr INTERVALO1-->
+                        </div>
+                        <div id="Rosibel2_6" class="de-Fxre edit">
+                            <p id="Intervalo2_6D"></p> <!--valor de la funcion de xr INTERVALO2-->
+                        </div>
+                        <div id="Rosibel3_6" class="de-Fxre edit">
+                            <p id="Intervalo3_6D"></p> <!--valor de la funcion de xr INTERVALO3-->
+                        </div>
+                        <div id="Rosibel4_6" class="de-Fxre edit">
+                            <p id="Intervalo4_6D"></p> <!--valor de la funcion de xr INTERVALO4-->
+                        </div>
+                        <div id="Rosibel5_6" class="de-Fxre edit">
+                            <p id="Intervalo5_6D"></p> <!--valor de la funcion de xr INTERVALO5-->
+                        </div>
+                        <div id="Rosibel6_6" class="de-Fxre edit">
+                            <p id="Intervalo6_6D"></p> <!--valor de la funcion de xr INTERVALO6-->
+                        </div>
+                        <div id="Rosibel7_6" class="de-Fxre edit">
+                            <p id="Intervalo7_6D"></p> <!--valor de la funcion de xr INTERVALO7-->
+                        </div>
+                        <div id="Rosibel8_6" class="de-Fxre edit">
+                            <p id="Intervalo8_6D"></p> <!--valor de la funcion de xr INTERVALO8-->
+                        </div>
+                        <div id="Rosibel9_6" class="de-Fxre edit">
+                            <p id="Intervalo9_6D"></p> <!--valor de la funcion de xr INTERVALO9-->
+                        </div>
+                        <div id="Rosibel10_6" class="de-Fxre edit">
+                            <p id="Intervalo10_6D"></p> <!--valor de la funcion de xr INTERVALO10-->
+                        </div>
+                        <div id="Rosibel11_6" class="de-Fxre edit">
+                            <p id="Intervalo11_6D"></p> <!--valor de la funcion de xr INTERVALO11-->
+                        </div>
+                        <div id="Rosibel12_6" class="de-Fxre edit">
+                            <p id="Intervalo12_6D"></p> <!--valor de la funcion de xr INTERVALO12-->
+                        </div>
+                        <div id="Rosibel13_6" class="de-Fxre edit">
+                            <p id="Intervalo13_6D"></p> <!--valor de la funcion de xr INTERVALO13-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="ocultor" class="ocultor-exisde"></div>
+        </div>
+        <!-- Esta es la tercera tabla (solo se usa en el metodo de newton mejorado) -->
+        <div id="resultadosTabla3" class="resultados tabla-new" style="display: none;">
+            <div class="encabezado">
+                <div class="de-encabezados">
+                    <p>I</p>
+                </div>
+                <div class="de-encabezados">
+                    <p id="e-1">xi</p>
+                </div>
+                <div class="de-encabezados">
+                    <p id="e-2">F(xi)</p>
+                </div>
+                <div class="de-encabezados">
+                    <p id="e-3">F'(xi)</p>
+                </div>
+                <div class="de-encabezados">
+                    <p id="e-4">F"(xi)</p>
+                </div>
+                <div class="de-encabezados">
+                    <p id="e-5">x1+1</p>
+                </div>
+                <div id="encabezado1" class="de-encabezados">
+                    <p id="e-6">T</p>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 50px;" class="calculados">
+                <div class="de-calculados">
+                    <div class="I ille">
+                        <div id="Jeny1_0" class="de-I edit">
+                            <p>1.</p>
+                        </div>
+                        <div id="Jeny2_0" class="de-I edit">
+                            <p>2.</p>
+                        </div>
+                        <div id="Jeny3_0" class="de-I edit">
+                            <p>3.</p>
+                        </div>
+                        <div id="Jeny4_0" class="de-I edit">
+                            <p>4.</p>
+                        </div>
+                        <div id="Jeny5_0" class="de-I edit">
+                            <p>5.</p>
+                        </div>
+                        <div id="Jeny6_0" class="de-I edit">
+                            <p>6.</p>
+                        </div>
+                        <div id="Jeny7_0" class="de-I edit">
+                            <p>7.</p>
+                        </div>
+                        <div id="Jeny8_0" class="de-I edit">
+                            <p>8.</p>
+                        </div>
+                        <div id="Jeny9_0" class="de-I edit">
+                            <p>9.</p>
+                        </div>
+                        <div id="Jeny10_0" class="de-I edit">
+                            <p>10.</p>
+                        </div>
+                        <div id="Jeny11_0" class="de-I edit">
+                            <p>11.</p>
+                        </div>
+                        <div id="Jeny12_0" class="de-I edit">
+                            <p>12.</p>
+                        </div>
+                        <div id="Jeny13_0" class="de-I edit">
+                            <p>13.</p>
+                        </div>
+                    </div>
+                    <!-- ACA ESTA EL DE LA A -->
+                    <div class="a ille">
+                        <div id="Jeny1_1" class="de-a edit">
+                            <p id="Intervalo1_1W"></p> <!--VALOR DE A INTERVALO1-->
+                        </div>
+                        <div id="Jeny2_1" class="de-a edit">
+                            <p id="Intervalo2_1W"></p> <!--VALOR DE A EN EL INTERVALO2-->
+                        </div>
+                        <div id="Jeny3_1" class="de-a edit">
+                            <p ID="Intervalo3_1W">
+                            <p> <!--VALOR DE A EN EL INTERVALO3-->
+                        </div>
+                        <div id="Jeny4_1" class="de-a edit">
+                            <p id="Intervalo4_1W"></p> <!--VALOR DE A EN EL INTERVALO4-->
+                        </div>
+                        <div id="Jeny5_1" class="de-a edit">
+                            <p id="Intervalo5_1W"></p> <!--VALOR DE A EN EL INTERAVLO5-->
+                        </div>
+                        <div id="Jeny6_1" class="de-a edit">
+                            <p Id="Intervalo6_1W"></p> <!--VALOR DE A EN EL INTERVALO6-->
+                        </div>
+                        <div id="Jeny7_1" class="de-a edit">
+                            <p id="Intervalo7_1W"></p> <!--VALOR DE A EN EL INTERVALO7-->
+                        </div>
+                        <div id="Jeny8_1" class="de-a edit">
+                            <p id="Intervalo8_1W"></p> <!--VALOR DE A EN EL INTERVALO8-->
+                        </div>
+                        <div id="Jeny9_1" class="de-a edit">
+                            <p id="Intervalo9_1W"></p> <!--VALOR DE A EN EL INTERVALO9-->
+                        </div>
+                        <div id="Jeny10_1" class="de-a edit">
+                            <p id="Intervalo10_1W"></p> <!--VALOR DE A EN EL INTERVALO10-->
+                        </div>
+                        <div id="Jeny11_1" class="de-a edit">
+                            <p id="Intervalo11_1W"></p> <!--VALOR DE A EN EL INTERVALO11-->
+                        </div>
+                        <div id="Jeny12_1" class="de-a edit">
+                            <p id="Intervalo12_1W"></p> <!--VALOR DE A EN EL INTERVALO12-->
+                        </div>
+                        <div id="Jeny13_1" class="de-a edit">
+                            <p id="Intervalo13_1W"></p> <!--VALOR DE A EN EL INTERVALO13-->
+                        </div>
+                    </div>
+                    <!-- ACA ESTA EL DE LA B -->
+                    <div class="b ille">
+                        <div id="Jeny1_2" class="de-b edit">
+                            <p id="Intervalo1_2W"></p> <!--Valor de B Intervalo1 -->
+                        </div>
+                        <div id="Jeny2_2" class="de-b edit">
+                            <p ID="Intervalo2_2W"></p> <!--VALOR DE B EN EL INTERVALO2-->
+                        </div>
+                        <div id="Jeny3_2" class="de-b edit">
+                            <p id="Intervalo3_2W"></p> <!--VALOR DE B EN EL INTERVALO3-->
+                        </div>
+                        <div id="Jeny4_2" class="de-b edit">
+                            <p id="Intervalo4_2W"></p> <!--VALOR DE B EN EL INTERVALO4-->
+                        </div>
+                        <div id="Jeny5_2" class="de-b edit">
+                            <p id="Intervalo5_2W"></p> <!--VALOR DE B EN EL INTERVALO5-->
+                        </div>
+                        <div id="Jeny6_2" class="de-b edit">
+                            <p id="Intervalo6_2W"></p> <!--VALOR DE B EN EL INTERVALO6-->
+                        </div>
+                        <div id="Jeny7_2" class="de-b edit">
+                            <p id="Intervalo7_2W"></p> <!--VALOR DE B EN EL INTERVALO7-->
+                        </div>
+                        <div id="Jeny8_2" class="de-b edit">
+                            <p id="Intervalo8_2W"></p> <!--VALOR DE B EN EL INTERVALO8-->
+                        </div>
+                        <div id="Jeny9_2" class="de-b edit">
+                            <p id="Intervalo9_2W"></p> <!--VALOR DE B EN EL INTERVALO9-->
+                        </div>
+                        <div id="Jeny10_2" class="de-b edit">
+                            <p id="Intervalo10_2W"></p> <!--VALOR DE B EN EL INTERVALO10-->
+                        </div>
+                        <div id="Jeny11_2" class="de-b edit">
+                            <p id="Intervalo11_2W"></p> <!--VALOR DE B EN EL INTERVALO11-->
+                        </div>
+                        <div id="Jeny12_2" class="de-b edit">
+                            <p id="Intervalo12_2W"></p> <!--VALOR DE B EN EL INTERVALO12-->
+                        </div>
+                        <div id="Jeny13_2" class="de-b edit">
+                            <p id="Intervalo13_2W"></p> <!--VALOR DE B EN EL INTERVALO13-->
+                        </div>
+                    </div>
+                    <!-- ACA ESTA EL DE LA F(A) -->
+                    <div class="Fa ille">
+                        <div id="Jeny1_3" class="de-Fa edit">
+                            <p id="Intervalo1_3W"></p> <!--Valor de Funcion de A Intervalo1-->
+                        </div>
+                        <div id="Jeny2_3" class="de-Fa edit">
+                            <p id="Intervalo2_3W"></p> <!--VALOR DE FUNCION DE A INTERVALO2-->
+                        </div>
+                        <div id="Jeny3_3" class="de-Fa edit">
+                            <p id="Intervalo3_3W"></p> <!--VALOR DE FUNCION DE A INTERVALO3-->
+                        </div>
+                        <div id="Jeny4_3" class="de-Fa edit">
+                            <p id="Intervalo4_3W"></p> <!--VALOR DE FUNCION DE A INTERVALO4-->
+                        </div>
+                        <div id="Jeny5_3" class="de-Fa edit">
+                            <p id="Intervalo5_3W"></p> <!--VALOR DE FUNCION DE A INTERVALO5-->
+                        </div>
+                        <div id="Jeny6_3" class="de-Fa edit">
+                            <p id="Intervalo6_3W"></p> <!--VALOR DE FUNCION DE A INTERVALO6-->
+                        </div>
+                        <div id="Jeny7_3" class="de-Fa edit">
+                            <p id="Intervalo7_3W"></p> <!--VALOR DE FUNCION DE A INTERVALO7-->
+                        </div>
+                        <div id="Jeny8_3" class="de-Fa edit">
+                            <p id="Intervalo8_3W"></p> <!--VALOR DE FUNCION DE A INTERVALO8-->
+                        </div>
+                        <div id="Jeny9_3" class="de-Fa edit">
+                            <p id="Intervalo9_3W"></p> <!--VALOR DE FUNCION DE A INTERVALO9-->
+                        </div>
+                        <div id="Jeny10_3" class="de-Fa edit">
+                            <p id="Intervalo10_3W"></p> <!--VALOR DE FUNCION DE A INTERVALO10-->
+                        </div>
+                        <div id="Jeny11_3" class="de-Fa edit">
+                            <p id="Intervalo11_3W"></p> <!--VALOR DE FUNCION DE A INTERVALO11-->
+                        </div>
+                        <div id="Jeny12_3" class="de-Fa edit">
+                            <p id="Intervalo12_3W"></p> <!--VALOR DE FUNCION DE A INTERVALO12-->
+                        </div>
+                        <div id="Jeny13_3" class="de-Fa edit">
+                            <p id="Intervalo13_3W"></p> <!--VALOR DE FUNCION DE A INTERVALO13-->
+                        </div>
+                    </div>
+                    <!-- ACA ESTA EL DE LA F(B) -->
+                    <div class="Fb ille">
+                        <div id="Jeny1_4" class="de-Fb edit">
+                            <p id="Intervalo1_4W"></p> <!--Valor de funcion de b intervalo1-->
+                        </div>
+                        <div id="Jeny2_4" class="de-Fb edit">
+                            <p id="Intervalo2_4W"></p> <!--VALOR DE LA FUNCION DE B INTERVALO2-->
+                        </div>
+                        <div id="Jeny3_4" class="de-Fb edit">
+                            <p id="Intervalo3_4W"></p> <!--VALOR DE LA FUNCION DE B INTERVALO3-->
+                        </div>
+                        <div id="Jeny4_4" class="de-Fb edit">
+                            <p id="Intervalo4_4W"></p> <!--VALOR DE LA FUNCION DE B INTERVALO4-->
+                        </div>
+                        <div id="Jeny5_4" class="de-Fb edit">
+                            <p id="Intervalo5_4W"></p> <!--VALOR DE LA FUNCION DE B INTERVALO5-->
+                        </div>
+                        <div id="Jeny6_4" class="de-Fb edit">
+                            <p id="Intervalo6_4W"></p> <!--VALOR DE LA FUNCION DE B INTERVALO6-->
+                        </div>
+                        <div id="Jeny7_4" class="de-Fb edit">
+                            <p id="Intervalo7_4W"></p> <!--VALOR DE LA FUNCION DE B INTERVALO7-->
+                        </div>
+                        <div id="Jeny8_4" class="de-Fb edit">
+                            <p id="Intervalo8_4W"></p> <!--VALOR DE LA FUNCION DE B INTERVALO8-->
+                        </div>
+                        <div id="Jeny9_4" class="de-Fb edit">
+                            <p id="Intervalo9_4W"></p> <!--VALOR DE LA FUNCION DE B INTERVALO9-->
+                        </div>
+                        <div id="Jeny10_4" class="de-Fb edit">
+                            <p id="Intervalo10_4W"></p> <!--VALOR DE LA FUNCION DE B INTERVALO10-->
+                        </div>
+                        <div id="Jeny11_4" class="de-Fb edit">
+                            <p id="Intervalo11_4W"></p> <!--VALOR DE LA FUNCION DE B INTERVALO11-->
+                        </div>
+                        <div id="Jeny12_4" class="de-Fb edit">
+                            <p id="Intervalo12_4W"></p> <!--VALOR DE LA FUNCION DE B INTERVALO12-->
+                        </div>
+                        <div id="Jeny13_4" class="de-Fb edit">
+                            <p id="Intervalo13_4W"></p> <!--VALOR DE LA FUNCION DE B INTERVALO13-->
+                        </div>
+                    </div>
+                    <!-- ACA ESTA EL DE LA XR (RECURRENCIA) -->
+                    <div id="posision5" class="xr ille">
+                        <div id="Jeny1_5" class="de-xr edit">
+                            <p Id="Intervalo1_5W"></p> <!-- VALOR DE LA RECURRENCIA INTERVALO 1-->
+                        </div>
+                        <div id="Jeny2_5" class="de-xr edit">
+                            <p id="Intervalo2_5W"></p> <!--VALOR DE LA RECURRENCIA INTERVALO2-->
+                        </div>
+                        <div id="Jeny3_5" class="de-xr edit">
+                            <p id="Intervalo3_5W"></p> <!--VALOR DE LA RECURRENCIA INTERVALO3-->
+                        </div>
+                        <div id="Jeny4_5" class="de-xr edit">
+                            <p id="Intervalo4_5W"></p> <!--VALOR DE LA RECURRENCIA INTERVALO4-->
+                        </div>
+                        <div id="Jeny5_5" class="de-xr edit">
+                            <p id="Intervalo5_5W"></p> <!--VALOR DE LA RECURRENCIA INTERVALO5-->
+                        </div>
+                        <div id="Jeny6_5" class="de-xr edit">
+                            <p id="Intervalo6_5W"></p> <!--VALOR DE LA RECURRENCIA INTERVALO6-->
+                        </div>
+                        <div id="Jeny7_5" class="de-xr edit">
+                            <p id="Intervalo7_5W"></p> <!--VALOR DE LA RECURRENCIA INTERVALO7-->
+                        </div>
+                        <div id="Jeny8_5" class="de-xr edit">
+                            <p id="Intervalo8_5W"></p> <!--VALOR DE LA RECURRENCIA INTERVALO8-->
+                        </div>
+                        <div id="Jeny9_5" class="de-xr edit">
+                            <p id="Intervalo9_5W"></p> <!--VALOR DE LA RECURRENCIA INTERVALO9-->
+                        </div>
+                        <div id="Jeny10_5" class="de-xr edit">
+                            <p id="Intervalo10_5W"></p> <!--VALOR DE LA RECURRENCIA INTERVALo10-->
+                        </div>
+                        <div id="Jeny11_5" class="de-xr edit">
+                            <p id="Intervalo11_5W"></p> <!--VALOR DE LA RECURRENCIA INTERVALO11-->
+                        </div>
+                        <div id="Jeny12_5" class="de-xr edit">
+                            <p id="Intervalo12_5W"></p> <!--VALOR DE LA RECURRENCIA INTERVALO12-->
+                        </div>
+                        <div id="Jeny13_5" class="de-xr edit">
+                            <p id="Intervalo13_5W"></p> <!--VALOR DE LA RECURRENCIA INTERVALO13-->
+                        </div>
+                    </div>
+                    <!-- ACA ESTA LA F(XR) FUNCION DE RECURRENCIA -->
+                    <div id="posision6" class="Fxr ille">
+                        <div id="Jeny1_6" class="de-Fxre edit">
+                            <p id="Intervalo1_6W"></p> <!--valor de funcion de xr INTERVALO1-->
+                        </div>
+                        <div id="Jeny2_6" class="de-Fxre edit">
+                            <p id="Intervalo2_6W"></p> <!--valor de la funcion de xr INTERVALO2-->
+                        </div>
+                        <div id="Jeny3_6" class="de-Fxre edit">
+                            <p id="Intervalo3_6W"></p> <!--valor de la funcion de xr INTERVALO3-->
+                        </div>
+                        <div id="Jeny4_6" class="de-Fxre edit">
+                            <p id="Intervalo4_6W"></p> <!--valor de la funcion de xr INTERVALO4-->
+                        </div>
+                        <div id="Jeny5_6" class="de-Fxre edit">
+                            <p id="Intervalo5_6W"></p> <!--valor de la funcion de xr INTERVALO5-->
+                        </div>
+                        <div id="Jeny6_6" class="de-Fxre edit">
+                            <p id="Intervalo6_6W"></p> <!--valor de la funcion de xr INTERVALO6-->
+                        </div>
+                        <div id="Jeny7_6" class="de-Fxre edit">
+                            <p id="Intervalo7_6W"></p> <!--valor de la funcion de xr INTERVALO7-->
+                        </div>
+                        <div id="Jeny8_6" class="de-Fxre edit">
+                            <p id="Intervalo8_6W"></p> <!--valor de la funcion de xr INTERVALO8-->
+                        </div>
+                        <div id="Jeny9_6" class="de-Fxre edit">
+                            <p id="Intervalo9_6W"></p> <!--valor de la funcion de xr INTERVALO9-->
+                        </div>
+                        <div id="Jeny10_6" class="de-Fxre edit">
+                            <p id="Intervalo10_6W"></p> <!--valor de la funcion de xr INTERVALO10-->
+                        </div>
+                        <div id="Jeny11_6" class="de-Fxre edit">
+                            <p id="Intervalo11_6W"></p> <!--valor de la funcion de xr INTERVALO11-->
+                        </div>
+                        <div id="Jeny12_6" class="de-Fxre edit">
+                            <p id="Intervalo12_6W"></p> <!--valor de la funcion de xr INTERVALO12-->
+                        </div>
+                        <div id="Jeny13_6" class="de-Fxre edit">
+                            <p id="Intervalo13_6W"></p> <!--valor de la funcion de xr INTERVALO13-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="ocultor" class="ocultor-exisde"></div>
+        </div>
+        <!-- esta es la cuarta tabla (solo se usa en metodo de newton mejorado) -->
+        <div id="resultadosTabla4" class="resultados tabla-new" style="display: none;">
+            <div class="encabezado">
+                <div class="de-encabezados">
+                    <p>I</p>
+                </div>
+                <div class="de-encabezados">
+                    <p id="e-1">xi</p>
+                </div>
+                <div class="de-encabezados">
+                    <p id="e-2">F(xi)</p>
+                </div>
+                <div class="de-encabezados">
+                    <p id="e-3">F'(xi)</p>
+                </div>
+                <div class="de-encabezados">
+                    <p id="e-4">F"(xi)</p>
+                </div>
+                <div class="de-encabezados">
+                    <p id="e-5">x1+1</p>
+                </div>
+                <div id="encabezado1" class="de-encabezados">
+                    <p id="e-6">T</p>
+                </div>
+            </div>
+            <div style="margin-bottom: 50px;" class="calculados">
+                <div class="de-calculados">
+                    <div class="I ille">
+                        <div id="Paz1_0" class="de-I edit">
+                            <p>1.</p>
+                        </div>
+                        <div id="Paz2_0" class="de-I edit">
+                            <p>2.</p>
+                        </div>
+                        <div id="Paz3_0" class="de-I edit">
+                            <p>3.</p>
+                        </div>
+                        <div id="Paz4_0" class="de-I edit">
+                            <p>4.</p>
+                        </div>
+                        <div id="Paz5_0" class="de-I edit">
+                            <p>5.</p>
+                        </div>
+                        <div id="Paz6_0" class="de-I edit">
+                            <p>6.</p>
+                        </div>
+                        <div id="Paz7_0" class="de-I edit">
+                            <p>7.</p>
+                        </div>
+                        <div id="Paz8_0" class="de-I edit">
+                            <p>8.</p>
+                        </div>
+                        <div id="Paz9_0" class="de-I edit">
+                            <p>9.</p>
+                        </div>
+                        <div id="Paz10_0" class="de-I edit">
+                            <p>10.</p>
+                        </div>
+                        <div id="Paz11_0" class="de-I edit">
+                            <p>11.</p>
+                        </div>
+                        <div id="Paz12_0" class="de-I edit">
+                            <p>12.</p>
+                        </div>
+                        <div id="Paz13_0" class="de-I edit">
+                            <p>13.</p>
+                        </div>
+                    </div>
+                    <!-- ACA ESTA EL DE LA A -->
+                    <div class="a ille">
+                        <div id="Paz1_1" class="de-a edit">
+                            <p id="Intervalo1_1O"></p> <!--VALOR DE A INTERVALO1-->
+                        </div>
+                        <div id="Paz2_1" class="de-a edit">
+                            <p id="Intervalo2_1O"></p> <!--VALOR DE A EN EL INTERVALO2-->
+                        </div>
+                        <div id="Paz3_1" class="de-a edit">
+                            <p ID="Intervalo3_1O">
+                            <p> <!--VALOR DE A EN EL INTERVALO3-->
+                        </div>
+                        <div id="Paz4_1" class="de-a edit">
+                            <p id="Intervalo4_1O"></p> <!--VALOR DE A EN EL INTERVALO4-->
+                        </div>
+                        <div id="Paz5_1" class="de-a edit">
+                            <p id="Intervalo5_1O"></p> <!--VALOR DE A EN EL INTERAVLO5-->
+                        </div>
+                        <div id="Paz6_1" class="de-a edit">
+                            <p Id="Intervalo6_1O"></p> <!--VALOR DE A EN EL INTERVALO6-->
+                        </div>
+                        <div id="Paz7_1" class="de-a edit">
+                            <p id="Intervalo7_1O"></p> <!--VALOR DE A EN EL INTERVALO7-->
+                        </div>
+                        <div id="Paz8_1" class="de-a edit">
+                            <p id="Intervalo8_1O"></p> <!--VALOR DE A EN EL INTERVALO8-->
+                        </div>
+                        <div id="Paz9_1" class="de-a edit">
+                            <p id="Intervalo9_1O"></p> <!--VALOR DE A EN EL INTERVALO9-->
+                        </div>
+                        <div id="Paz10_1" class="de-a edit">
+                            <p id="Intervalo10_1O"></p> <!--VALOR DE A EN EL INTERVALO10-->
+                        </div>
+                        <div id="Paz11_1" class="de-a edit">
+                            <p id="Intervalo11_1O"></p> <!--VALOR DE A EN EL INTERVALO11-->
+                        </div>
+                        <div id="Paz12_1" class="de-a edit">
+                            <p id="Intervalo12_1O"></p> <!--VALOR DE A EN EL INTERVALO12-->
+                        </div>
+                        <div id="Paz13_1" class="de-a edit">
+                            <p id="Intervalo13_1O"></p> <!--VALOR DE A EN EL INTERVALO13-->
+                        </div>
+                    </div>
+                    <!-- ACA ESTA EL DE LA B -->
+                    <div class="b ille">
+                        <div id="Paz1_2" class="de-b edit">
+                            <p id="Intervalo1_2O"></p> <!--Valor de B Intervalo1 -->
+                        </div>
+                        <div id="Paz2_2" class="de-b edit">
+                            <p ID="Intervalo2_2O"></p> <!--VALOR DE B EN EL INTERVALO2-->
+                        </div>
+                        <div id="Paz3_2" class="de-b edit">
+                            <p id="Intervalo3_2O"></p> <!--VALOR DE B EN EL INTERVALO3-->
+                        </div>
+                        <div id="Paz4_2" class="de-b edit">
+                            <p id="Intervalo4_2O"></p> <!--VALOR DE B EN EL INTERVALO4-->
+                        </div>
+                        <div id="Paz5_2" class="de-b edit">
+                            <p id="Intervalo5_2O"></p> <!--VALOR DE B EN EL INTERVALO5-->
+                        </div>
+                        <div id="Paz6_2" class="de-b edit">
+                            <p id="Intervalo6_2O"></p> <!--VALOR DE B EN EL INTERVALO6-->
+                        </div>
+                        <div id="Paz7_2" class="de-b edit">
+                            <p id="Intervalo7_2O"></p> <!--VALOR DE B EN EL INTERVALO7-->
+                        </div>
+                        <div id="Paz8_2" class="de-b edit">
+                            <p id="Intervalo8_2O"></p> <!--VALOR DE B EN EL INTERVALO8-->
+                        </div>
+                        <div id="Paz9_2" class="de-b edit">
+                            <p id="Intervalo9_2O"></p> <!--VALOR DE B EN EL INTERVALO9-->
+                        </div>
+                        <div id="Paz10_2" class="de-b edit">
+                            <p id="Intervalo10_2O"></p> <!--VALOR DE B EN EL INTERVALO10-->
+                        </div>
+                        <div id="Paz11_2" class="de-b edit">
+                            <p id="Intervalo11_2O"></p> <!--VALOR DE B EN EL INTERVALO11-->
+                        </div>
+                        <div id="Paz12_2" class="de-b edit">
+                            <p id="Intervalo12_2O"></p> <!--VALOR DE B EN EL INTERVALO12-->
+                        </div>
+                        <div id="Paz13_2" class="de-b edit">
+                            <p id="Intervalo13_2O"></p> <!--VALOR DE B EN EL INTERVALO13-->
+                        </div>
+                    </div>
+                    <!-- ACA ESTA EL DE LA F(A) -->
+                    <div class="Fa ille">
+                        <div id="Paz1_3" class="de-Fa edit">
+                            <p id="Intervalo1_3O"></p> <!--Valor de Funcion de A Intervalo1-->
+                        </div>
+                        <div id="Paz2_3" class="de-Fa edit">
+                            <p id="Intervalo2_3O"></p> <!--VALOR DE FUNCION DE A INTERVALO2-->
+                        </div>
+                        <div id="Paz3_3" class="de-Fa edit">
+                            <p id="Intervalo3_3O"></p> <!--VALOR DE FUNCION DE A INTERVALO3-->
+                        </div>
+                        <div id="Paz4_3" class="de-Fa edit">
+                            <p id="Intervalo4_3O"></p> <!--VALOR DE FUNCION DE A INTERVALO4-->
+                        </div>
+                        <div id="Paz5_3" class="de-Fa edit">
+                            <p id="Intervalo5_3O"></p> <!--VALOR DE FUNCION DE A INTERVALO5-->
+                        </div>
+                        <div id="Paz6_3" class="de-Fa edit">
+                            <p id="Intervalo6_3O"></p> <!--VALOR DE FUNCION DE A INTERVALO6-->
+                        </div>
+                        <div id="Paz7_3" class="de-Fa edit">
+                            <p id="Intervalo7_3O"></p> <!--VALOR DE FUNCION DE A INTERVALO7-->
+                        </div>
+                        <div id="Paz8_3" class="de-Fa edit">
+                            <p id="Intervalo8_3O"></p> <!--VALOR DE FUNCION DE A INTERVALO8-->
+                        </div>
+                        <div id="Paz9_3" class="de-Fa edit">
+                            <p id="Intervalo9_3O"></p> <!--VALOR DE FUNCION DE A INTERVALO9-->
+                        </div>
+                        <div id="Paz10_3" class="de-Fa edit">
+                            <p id="Intervalo10_3O"></p> <!--VALOR DE FUNCION DE A INTERVALO10-->
+                        </div>
+                        <div id="Paz11_3" class="de-Fa edit">
+                            <p id="Intervalo11_3O"></p> <!--VALOR DE FUNCION DE A INTERVALO11-->
+                        </div>
+                        <div id="Paz12_3" class="de-Fa edit">
+                            <p id="Intervalo12_3O"></p> <!--VALOR DE FUNCION DE A INTERVALO12-->
+                        </div>
+                        <div id="Paz13_3" class="de-Fa edit">
+                            <p id="Intervalo13_3O"></p> <!--VALOR DE FUNCION DE A INTERVALO13-->
+                        </div>
+                    </div>
+                    <!-- ACA ESTA EL DE LA F(B) -->
+                    <div class="Fb ille">
+                        <div id="Paz1_4" class="de-Fb edit">
+                            <p id="Intervalo1_4O"></p> <!--Valor de funcion de b intervalo1-->
+                        </div>
+                        <div id="Paz2_4" class="de-Fb edit">
+                            <p id="Intervalo2_4O"></p> <!--VALOR DE LA FUNCION DE B INTERVALO2-->
+                        </div>
+                        <div id="Paz3_4" class="de-Fb edit">
+                            <p id="Intervalo3_4O"></p> <!--VALOR DE LA FUNCION DE B INTERVALO3-->
+                        </div>
+                        <div id="Paz4_4" class="de-Fb edit">
+                            <p id="Intervalo4_4O"></p> <!--VALOR DE LA FUNCION DE B INTERVALO4-->
+                        </div>
+                        <div id="Paz5_4" class="de-Fb edit">
+                            <p id="Intervalo5_4O"></p> <!--VALOR DE LA FUNCION DE B INTERVALO5-->
+                        </div>
+                        <div id="Paz6_4" class="de-Fb edit">
+                            <p id="Intervalo6_4O"></p> <!--VALOR DE LA FUNCION DE B INTERVALO6-->
+                        </div>
+                        <div id="Paz7_4" class="de-Fb edit">
+                            <p id="Intervalo7_4O"></p> <!--VALOR DE LA FUNCION DE B INTERVALO7-->
+                        </div>
+                        <div id="Paz8_4" class="de-Fb edit">
+                            <p id="Intervalo8_4O"></p> <!--VALOR DE LA FUNCION DE B INTERVALO8-->
+                        </div>
+                        <div id="Paz9_4" class="de-Fb edit">
+                            <p id="Intervalo9_4O"></p> <!--VALOR DE LA FUNCION DE B INTERVALO9-->
+                        </div>
+                        <div id="Paz10_4" class="de-Fb edit">
+                            <p id="Intervalo10_4O"></p> <!--VALOR DE LA FUNCION DE B INTERVALO10-->
+                        </div>
+                        <div id="Paz11_4" class="de-Fb edit">
+                            <p id="Intervalo11_4O"></p> <!--VALOR DE LA FUNCION DE B INTERVALO11-->
+                        </div>
+                        <div id="Paz12_4" class="de-Fb edit">
+                            <p id="Intervalo12_4O"></p> <!--VALOR DE LA FUNCION DE B INTERVALO12-->
+                        </div>
+                        <div id="Paz13_4" class="de-Fb edit">
+                            <p id="Intervalo13_4O"></p> <!--VALOR DE LA FUNCION DE B INTERVALO13-->
+                        </div>
+                    </div>
+                    <!-- ACA ESTA EL DE LA XR (RECURRENCIA) -->
+                    <div id="posision5" class="xr ille">
+                        <div id="Paz1_5" class="de-xr edit">
+                            <p Id="Intervalo1_5O"></p> <!-- VALOR DE LA RECURRENCIA INTERVALO 1-->
+                        </div>
+                        <div id="Paz2_5" class="de-xr edit">
+                            <p id="Intervalo2_5O"></p> <!--VALOR DE LA RECURRENCIA INTERVALO2-->
+                        </div>
+                        <div id="Paz3_5" class="de-xr edit">
+                            <p id="Intervalo3_5O"></p> <!--VALOR DE LA RECURRENCIA INTERVALO3-->
+                        </div>
+                        <div id="Paz4_5" class="de-xr edit">
+                            <p id="Intervalo4_5O"></p> <!--VALOR DE LA RECURRENCIA INTERVALO4-->
+                        </div>
+                        <div id="Paz5_5" class="de-xr edit">
+                            <p id="Intervalo5_5O"></p> <!--VALOR DE LA RECURRENCIA INTERVALO5-->
+                        </div>
+                        <div id="Paz6_5" class="de-xr edit">
+                            <p id="Intervalo6_5O"></p> <!--VALOR DE LA RECURRENCIA INTERVALO6-->
+                        </div>
+                        <div id="Paz7_5" class="de-xr edit">
+                            <p id="Intervalo7_5O"></p> <!--VALOR DE LA RECURRENCIA INTERVALO7-->
+                        </div>
+                        <div id="Paz8_5" class="de-xr edit">
+                            <p id="Intervalo8_5O"></p> <!--VALOR DE LA RECURRENCIA INTERVALO8-->
+                        </div>
+                        <div id="Paz9_5" class="de-xr edit">
+                            <p id="Intervalo9_5O"></p> <!--VALOR DE LA RECURRENCIA INTERVALO9-->
+                        </div>
+                        <div id="Paz10_5" class="de-xr edit">
+                            <p id="Intervalo10_5O"></p> <!--VALOR DE LA RECURRENCIA INTERVALo10-->
+                        </div>
+                        <div id="Paz11_5" class="de-xr edit">
+                            <p id="Intervalo11_5O"></p> <!--VALOR DE LA RECURRENCIA INTERVALO11-->
+                        </div>
+                        <div id="Paz12_5" class="de-xr edit">
+                            <p id="Intervalo12_5O"></p> <!--VALOR DE LA RECURRENCIA INTERVALO12-->
+                        </div>
+                        <div id="Paz13_5" class="de-xr edit">
+                            <p id="Intervalo13_5O"></p> <!--VALOR DE LA RECURRENCIA INTERVALO13-->
+                        </div>
+                    </div>
+                    <!-- ACA ESTA LA F(XR) FUNCION DE RECURRENCIA -->
+                    <div id="posision6" class="Fxr ille">
+                        <div id="Paz1_6" class="de-Fxre edit">
+                            <p id="Intervalo1_6O"></p> <!--valor de funcion de xr INTERVALO1-->
+                        </div>
+                        <div id="Paz2_6" class="de-Fxre edit">
+                            <p id="Intervalo2_6O"></p> <!--valor de la funcion de xr INTERVALO2-->
+                        </div>
+                        <div id="Paz3_6" class="de-Fxre edit">
+                            <p id="Intervalo3_6O"></p> <!--valor de la funcion de xr INTERVALO3-->
+                        </div>
+                        <div id="Paz4_6" class="de-Fxre edit">
+                            <p id="Intervalo4_6O"></p> <!--valor de la funcion de xr INTERVALO4-->
+                        </div>
+                        <div id="Paz5_6" class="de-Fxre edit">
+                            <p id="Intervalo5_6O"></p> <!--valor de la funcion de xr INTERVALO5-->
+                        </div>
+                        <div id="Paz6_6" class="de-Fxre edit">
+                            <p id="Intervalo6_6O"></p> <!--valor de la funcion de xr INTERVALO6-->
+                        </div>
+                        <div id="Paz7_6" class="de-Fxre edit">
+                            <p id="Intervalo7_6O"></p> <!--valor de la funcion de xr INTERVALO7-->
+                        </div>
+                        <div id="Paz8_6" class="de-Fxre edit">
+                            <p id="Intervalo8_6O"></p> <!--valor de la funcion de xr INTERVALO8-->
+                        </div>
+                        <div id="Paz9_6" class="de-Fxre edit">
+                            <p id="Intervalo9_6O"></p> <!--valor de la funcion de xr INTERVALO9-->
+                        </div>
+                        <div id="Paz10_6" class="de-Fxre edit">
+                            <p id="Intervalo10_6O"></p> <!--valor de la funcion de xr INTERVALO10-->
+                        </div>
+                        <div id="Paz11_6" class="de-Fxre edit">
+                            <p id="Intervalo11_6O"></p> <!--valor de la funcion de xr INTERVALO11-->
+                        </div>
+                        <div id="Paz12_6" class="de-Fxre edit">
+                            <p id="Intervalo12_6O"></p> <!--valor de la funcion de xr INTERVALO12-->
+                        </div>
+                        <div id="Paz13_6" class="de-Fxre edit">
+                            <p id="Intervalo13_6O"></p> <!--valor de la funcion de xr INTERVALO13-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ACA ESTAN LOS INTERVALOS CALCULADOS -->
+        <div id="calculados" class="cont-calcular-intervalos" style="justify-content: center; display: none;">
+            <h1>INTERVALOS QUE TIENEN CAMBIO DE SIGNO</h1>
+            <div class="prueba" id="prueba1">
+                <div class="dentro">
+                    <span style="font-size: 20px;">X</span><span style="font-size: 8px;">1</span><span> Y </span><span
+                        style="font-size: 20px;">X</span><span style="font-size: 8px;">2</span>
+                </div>
+                <div class="dentro1">
+                    <div class="uno">
+                        <span id="number1"></span><span> = </span><SPan id="valo1"></SPan>
+                    </div>
+                    <div class="dos">
+                        <span id="number2"></span><span> = </span><SPan id="valo2"></SPan>
+                    </div>
+                </div>
+            </div>
+            <div style="display: none;" class="prueba" id="prueba2">
+                <div class="dentro">
+                    <span style="font-size: 20px;">X</span><span style="font-size: 8px;">1</span><span> Y </span><span
+                        style="font-size: 20px;">X</span><span style="font-size: 8px;">2</span>
+                </div>
+                <div class="dentro1">
+                    <div class="uno">
+                        <span id="number3"></span><span> = </span><SPan id="valo3"></SPan>
+                    </div>
+                    <div class="dos">
+                        <span id="number4"></span><span> = </span><SPan id="valo4"></SPan>
+                    </div>
+                </div>
+            </div>
+            <div style="display: none;" class="prueba" id="prueba3">
+                <div class="dentro">
+                    <span style="font-size: 20px;">X</span><span style="font-size: 8px;">1</span><span> Y </span><span
+                        style="font-size: 20px;">X</span><span style="font-size: 8px;">2</span>
+                </div>
+                <div class="dentro1">
+                    <div class="uno">
+                        <span id="number5"></span><span> = </span><SPan id="valo5"></SPan>
+                    </div>
+                    <div class="dos">
+                        <span id="number6"></span><span> = </span><SPan id="valo6"></SPan>
+                    </div>
+                </div>
+            </div>
+            <div style="display: none;" class="prueba" id="prueba4">
+                <div class="dentro">
+                    <span style="font-size: 20px;">X</span><span style="font-size: 8px;">1</span><span> Y </span><span
+                        style="font-size: 20px;">X</span><span style="font-size: 8px;">2</span>
+                </div>
+                <div class="dentro1">
+                    <div class="uno">
+                        <span id="number7"></span><span> = </span><SPan id="valo7"></SPan>
+                    </div>
+                    <div class="dos">
+                        <span id="number8"></span><span> = </span><SPan id="valo8"></SPan>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- ACA ESTA LA GRAFICA DE NEWTON MEJORADP -->
+        <section id="grafica" class="grafica">
+            <div
+                >
+                <canvas id="myChart"></canvas>
+            </div>
+        </section>
+        <!-- LA INPERPOLACION -->
+        <div id="Entrada_Interpolacion" class="cont-general-Interpolarisacion" style="display: none;">
+            <div class="cont-grupal-int">
+                <div class="cont-individual este">
+                    <div class="cont-mostrar2">
+                        <div class="imagen">
+                            <img src="imagenes/icons8-alarma-64.png" alt="">
+                        </div>
+                        <div class="textos">
+                            <H1>LINEAL DE LARANJE</H1>
+                        </div>
+                        <div class="imagen-btn">
+                            <img src="imagenes/inter-laranje-removebg-preview.png" alt="">
+                            <button onclick="Entrada_Lagranje()" class="btn-biseccion">Resolver</button>
+                        </div>
+                    </div>
+                    <div class="cont-mostrar1">
+                        <img src="imagenes/NETON.png" alt="">
+                    </div>
+                </div>
+                <div class="cont-individual este">
+                    <div class="cont-mostrar2">
+                        <div class="imagen">
+                            <img src="imagenes/icons8-alarma-64.png" alt="">
+                        </div>
+                        <div class="textos">
+                            <H1>LINEAL DE NEWTON</H1>
+                        </div>
+                        <div class="imagen-btn">
+                            <img src="imagenes/inter-newton-removebg-preview.png" alt="">
+                            <button onclick="Entrada_Interpolacion_Newton()" class="btn-biseccion">Resolver</button>
+                        </div>
+                    </div>
+                    <div class="cont-mostrar1">
+                        <img src="imagenes/LARANJE2.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="Interpolacion-new" class="cont-Interpolacion-Newton" style="display: none;">
+            <div class="cont-tabla-datos">
+                <div class="cont-casillas">
+                    <div id="reseter" class="casilla">
+                        <p>X</p>
+                    </div>
+                    <div style="display: none;" id="reseter1" class="casilla">
+                        <p id="Cantidad1"></p>
+                    </div>
+                    <div style="display: none;" id="reseter2" class="casilla">
+                        <p id="Cantidad2"></p>
+                    </div>
+                    <div style="display: none;" id="reseter3" class="casilla">
+                        <p id="Cantidad3"></p>
+                    </div>
+                    <div style="display: none;" id="reseter4" class="casilla">
+                        <p id="Cantidad4"></p>
+                    </div>
+                    <div style="display: none;" id="reseter5" class="casilla">
+                        <p id="Cantidad5"></p>
+                    </div>
+                    <div style="display: none;" id="reseter6" class="casilla">
+                        <p id="Cantidad6"></p>
+                    </div>
+                    <div style="display: none;" id="reseter7" class="casilla">
+                        <p id="Cantidad7"></p>
+                    </div>
+                    <div style="display: none;" id="reseter8" class="casilla">
+                        <p id="Cantidad8"></p>
+                    </div>
+                    <div style="display: none;" id="reseter9" class="casilla">
+                        <p id="Cantidad9"></p>
+                    </div>
+                    <div style="display: none;" id="reseter10" class="casilla">
+                        <p id="Cantidad10"></p>
+                    </div>
+                    <div style="display: none;" id="reseter11" class="casilla">
+                        <p id="Cantidad11"></p>
+                    </div>
+                    <div style="display: none;" id="reseter12" class="casilla">
+                        <p id="Cantidad12"></p>
+                    </div>
+                </div>
+                <div class="cont-casillas">
+                    <div id="reset1" style="display: none;" class="casilla">
+                        <p>Y</p>
+                    </div>
+                    <div class="casilla">
+                        <p id="CantidadYY1"></p>
+                    </div>
+                    <div id="reset2" style="display: none;" class="casilla">
+                        <p id="CantidadYY2"></p>
+                    </div>
+                    <div id="reset3" style="display: none;" class="casilla">
+                        <p id="CantidadYY3"></p>
+                    </div>
+                    <div id="reset4" style="display: none;" class="casilla">
+                        <p id="CantidadYY4"></p>
+                    </div>
+                    <div id="reset5" style="display: none;" class="casilla">
+                        <p id="CantidadYY5"></p>
+                    </div>
+                    <div id="reset6" style="display: none;" id="reset" class="casilla">
+                        <p id="CantidadYY6"></p>
+                    </div>
+                    <div id="reset7" style="display: none;" class="casilla">
+                        <p id="CantidadYY7"></p>
+                    </div>
+                    <div id="reset8" style="display: none;" class="casilla">
+                        <p id="CantidadYY8"></p>
+                    </div>
+                    <div id="reset9" style="display: none;" class="casilla">
+                        <p id="CantidadYY9"></p>
+                    </div>
+                    <div style="display: none;" id="reset10" class="casilla">
+                        <p id="CantidadYY10"></p>
+                    </div>
+                    <div id="reset11" style="display: none;" class="casilla">
+                        <p id="CantidadYY11"></p>
+                    </div>
+                    <div id="reset12" style="display: none;" class="casilla">
+                        <p id="CantidadYY12"></p>
+                    </div>
+                </div>
+                <div class="resul">
+                    <h1 class="elResu x">Y=<span id="RESU_INTER" class="elResu"></span> </h1>
+
+                </div>
+            </div>
+            
+        </div>
+    </main>
+    <div class="botones" id="botones" style="display: none;">
+        <div class="grupos-botones">
+            <button  onclick="printHTML()"><img src="imagenes/icons8-impresora-50 (1).png" alt=""></button><script>
+                function printHTML() {
+                  if (window.print) {
+                    window.print();
+                  }
+                }</script>
+                <button onclick="captura()"><img src="imagenes/icons8-captura-de-pantalla-64 (1).png" alt=""></button>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+            
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <footer id="for">
+        <div class="cont-footer">
+            <div class="grupos-footer">
+                <h1>Correo</h1>
+                <h2>wilimarroquin61@gmail.com</h2>
+            </div>
+            <div class="grupos-footer">
+                <h1>Telefono</h1>
+                <h2>5622 1083</h2>
+            </div>
+            <div class="grupos-footer">
+                <h1>Direccion</h1>
+                <h2>Guastatoya El progreso</h2>
+            </div>
+        </div>
+        <h1 class="ultimo">Wilian Marroquin; Metodos Numericos</h1>
+    </footer>
+    <p class="visibilidad" id="stand1">1</p> <!--Num1-->
+    <p class="visibilidad" id="stand2"></p> <!--X1-->
+    <p class="visibilidad" id="stand3">1</p> <!--Potencia1-->
+    <p class="visibilidad" id="stand4">V</p> <!--signo1-->
+    <p class="visibilidad" id="stand5">1</p> <!--Num2-->
+    <p class="visibilidad" id="stand6">V</p> <!--X2-->
+    <p class="visibilidad" id="stand7">1</p> <!--Potencia2-->
+    <p class="visibilidad" id="stand8">V</p> <!--signo2-->
+    <p class="visibilidad" id="stand9">1</p> <!--Num3-->
+    <p class="visibilidad" id="stand10">V</p> <!--X3-->
+    <p class="visibilidad" id="stand11">1</p> <!--Potencia3-->
+    <p class="visibilidad" id="stand12">V</p> <!--signo3-->
+    <p class="visibilidad" id="stand13">1</p> <!--Num4-->
+    <p class="visibilidad" id="stand14">V</p> <!--X4-->
+    <p class="visibilidad" id="stand15">1</p> <!--Potencia4-->
+    <p class="visibilidad" id="stand16">V</p> <!--signo4-->
+    <p class="visibilidad" id="stand17">1</p> <!--Num5-->
+    <p class="visibilidad" id="stand18">V</p> <!--X5-->
+    <p class="visibilidad" id="stand19">1</p> <!--Potencia5-->
+    <p class="visibilidad" id="stand20">V</p> <!--signo5-->
+    <p class="visibilidad" id="stand21">1</p> <!--Num6-->
+    <p class="visibilidad" id="stand22">V</p> <!--X6-->
+    <p class="visibilidad" id="stand23">1</p> <!--Potencia6-->
+
+    <p class="visibilidad" id="rol1"></p> <!--APOYO-->
+    <p class="visibilidad" id="rol2"></p> <!--APOYO-->
+    <p class="visibilidad" id="rol3"></p> <!--APOYO-->
+    <p class="visibilidad" id="rol4"></p> <!--APOYO-->
+    <p class="visibilidad" id="rol5"></p> <!--APOYO-->
+    <p class="visibilidad" id="rol6"></p> <!--APOYO-->
+    <p class="visibilidad" id="rol7"></p> <!--APOYO-->
+    <p class="visibilidad" id="rol8"></p> <!--APOYO-->
+    <p class="visibilidad" id="rol9"></p> <!--APOYO-->
+    <p class="visibilidad" id="rol10"></p> <!--APOYO-->
+    <p class="visibilidad" id="rol11"></p> <!--APOYO-->
+    <p class="visibilidad" id="rol12"></p> <!--APOYO-->
+    <p class="visibilidad" id="rol13"></p> <!--APOYO-->
+    <p class="visibilidad" id="rol14"></p> <!--APOYO-->
+    <p class="visibilidad" id="rol15"></p> <!--APOYO-->
+    <p class="visibilidad" id="rol16"></p> <!--APOYO-->
+    <p class="visibilidad" id="rol17"></p> <!--APOYO-->
+    <p class="visibilidad" id="rol18"></p> <!--APOYO-->
+    <p class="visibilidad" id="rol19"></p> <!--APOYO-->
+    <p class="visibilidad" id="rol20"></p> <!--APOYO-->
+    <p class="visibilidad" id="rol21"></p> <!--APOYO-->
+    <p class="visibilidad" id="rol22"></p> <!--APOYO-->
+    <p class="visibilidad" id="rol23"></p> <!--APOYO-->
+
+    <p class="visibilidad" id="intervalo_calculado1"></p> <!--Aca se almacena el PRIMER intervalo calculado -->
+    <p class="visibilidad" id="intervalo_calculado2"></p> <!--Aca se almacena el SEGUNDO intervalo calculado -->
+    <p class="visibilidad" id="intervalo_calculado3"></p> <!--Aca se almacena el TERCER intervalo calculado -->
+    <p class="visibilidad" id="intervalo_calculado4"></p> <!--Aca se almacena el CUARTO intervalo calculado -->
+    <p class="visibilidad" id="valorX1"></p> <!--se almacena el valor de x1-->
+    <p class="visibilidad" id="valorX2"></p> <!--se almacena el valor de x2-->
+    <p class="visibilidad" id="valorX3"></p> <!--se almacena el valor de x3-->
+    <style>
+        .visibilidad {
+            display: none;
+        }
+    </style>
+    <p class="visibilidad" id="position1"></p>
+    <p class="visibilidad" id="position2"></p>
+    <p class="visibilidad" id="position3"></p>
+    <p class="visibilidad" id="position4"></p>
+    <p class="visibilidad" id="position5"></p>
+    <p class="visibilidad" id="position6"></p>
+    <p class="visibilidad" id="position7"></p>
+    <p class="visibilidad" id="position8"></p>
+    <p class="visibilidad" id="position9"></p>
+    <p class="visibilidad" id="position10"></p>
+    <p class="visibilidad" id="position11"></p>
+    <p class="visibilidad" id="position12"></p>
+    <p class="visibilidad" id="position13"></p>
+    <p class="visibilidad" id="position14"></p>
+    <p class="visibilidad" id="position15"></p>
+    <p class="visibilidad" id="position16"></p>
+    <p class="visibilidad" id="position17"></p>
+    <p class="visibilidad" id="position18"></p>
+    <p class="visibilidad" id="position19"></p>
+    <p class="visibilidad" id="position20"></p>
+    <p class="visibilidad" id="position21"></p>
+    <p class="visibilidad" id="position22"></p>
+    <p class="visibilidad" id="position23"></p>
+    <p class="visibilidad" id="position24"></p>
+    <p class="visibilidad" id="position25"></p>
+
+    <p class="visibilidad" id="negativo1"></p>
+    <p class="visibilidad" id="negativo2"></p>
+    <p class="visibilidad" id="negativo3"></p>
+    <p class="visibilidad" id="negativo4"></p>
+    <p class="visibilidad" id="negativo5"></p>
+    <p class="visibilidad" id="negativo6"></p>
+    <p class="visibilidad" id="negativo7"></p>
+    <p class="visibilidad" id="negativo8"></p>
+    <p class="visibilidad" id="negativo9"></p>
+    <p class="visibilidad" id="negativo10"></p>
+    <p class="visibilidad" id="negativo11"></p>
+    <p class="visibilidad" id="negativo12"></p>
+    <p class="visibilidad" id="negativo13"></p>
+    <p class="visibilidad" id="negativo14"></p>
+    <p class="visibilidad" id="negativo15"></p>
+    <p class="visibilidad" id="negativo16"></p>
+    <p class="visibilidad" id="negativo17"></p>
+    <p class="visibilidad" id="negativo18"></p>
+    <p class="visibilidad" id="negativo19"></p>
+    <p class="visibilidad" id="negativo20"></p>
+    <p class="visibilidad" id="negativo21"></p>
+</body>
+
+</html>
